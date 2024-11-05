@@ -421,8 +421,7 @@ document.querySelectorAll('[data-anchor]').forEach(button => {
   button.addEventListener('click', function (e) {
     e.preventDefault();
     const targetId = this.getAttribute('data-anchor');
-    console.log(targetId);
-
     scrollToElement(targetId);
+    document.querySelector('.nav').classList.remove('_active');
   });
 });
