@@ -46,9 +46,9 @@ MIDDLEWARE = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'avroraweb_akr',
-        'USER': 'avroraweb_akr',
-        'PASSWORD': '7gO*gh2v',
+        'NAME': 'avroraweb_mulbr',
+        'USER': 'avroraweb_mulbr',
+        'PASSWORD': 'A5SBvxeqR6e!',
         'HOST': 'localhost',
     }
 }
