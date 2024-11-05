@@ -457,3 +457,17 @@
     }
   }
 }
+
+.reviews {
+
+  // .reviews__container
+
+  &__container {}
+
+  // .reviews__inner
+
+  &__inner {
+    max-width: 528px;
+    margin: 0 auto;
+  }
+}

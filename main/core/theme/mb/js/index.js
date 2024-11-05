@@ -269,16 +269,16 @@ const burgerButton = document.getElementById('burger-btn');
 if (burgerButton) {
   burgerButton.addEventListener('mouseup', (event) => {
     const burgerBtn = event.target.closest('#burger-btn');
+    console.log('click');
+
     if (burgerBtn) {
-      burgerBtn.classList.toggle('_active');
-      let headerElem = document.querySelector('.header');
-      headerElem.classList.toggle('_active');
-      if (headerElem.classList.contains('_active')) {
+      let nav = document.querySelector('.nav');
+      nav.classList.toggle('_active');
+      if (nav.classList.contains('_active')) {
         bodyLock();
       } else {
         bodyUnLock();
       }
-      document.documentElement.classList.toggle('_overlay');
     }
   })
 }

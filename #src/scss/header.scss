@@ -97,6 +97,10 @@
   flex: 1 1 auto;
   position: relative;
 
+  &._active {
+    right: 0;
+  }
+
   @media screen and (max-width: 768px) {
     position: fixed;
     top: 0;

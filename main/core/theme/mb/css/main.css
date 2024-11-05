@@ -553,6 +553,11 @@ html.lock body::before {
   overflow: hidden;
 }
 
+.reviews__inner {
+  max-width: 528px;
+  margin: 0 auto;
+}
+
 .about__grid {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -710,6 +715,10 @@ html.lock body::before {
 .nav {
   flex: 1 1 auto;
   position: relative;
+}
+
+.nav._active {
+  right: 0;
 }
 
 .nav__list {
