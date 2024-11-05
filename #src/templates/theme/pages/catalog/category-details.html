@@ -1,0 +1,104 @@
+{% extends "base.html" %} {% load shop_tags %} {% load thumbnail %}{% load static %}
+{% block title %}
+{% if category.meta_title %}
+{{ category.meta_title}}
+{% else %}
+Заказать {% filter lower %}{{ category.name }}{% endfilter %} памятников на могилу в Томске | Акрополь
+{% endif %}
+{% endblock %}
+
+{% block description %}
+{% if category.meta_description %}
+{{ category.meta_description }}
+{% else %}
+Купить {% filter lower %}{{ category.name }}{% endfilter %} на могилу по выгодной цене в Томске от компании Акрополь.
+Заказать памятники можно по номеру
++7(900) 921-09-15 и +7(903) 955-40-18
+{% endif %}
+
+
+{% endblock %}
+{% block keywords %}
+{{ category.meta_keywords }}
+{% endblock %}
+{% block content %}
+<main class="page">
+  <section class="category-details">
+    <div class="category-details__container">
+      <div class="category-details__head">
+        <h1 class="category-details__title _title">Категория - {{ category.name }}</h1>
+        <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <a href="{% url 'category' %}" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+            class="breadcrumbs__item">
+            Каталог
+            <meta itemprop="position" content="1" />
+          </a>
+          <a href="{{ product.category.get_absolute_url }}" itemprop="itemListElement" itemscope=""
+            itemtype="http://schema.org/ListItem" class="breadcrumbs__item">
+            {{ category.name }}
+            <meta itemprop="position" content="2" />
+          </a>
+        </div>
+      </div>
+
+      <div class="category-details__row">
+        {% if request.path != "/category/ogradki/" %}
+        <div class="category-details__col" id="filter-category">
+          <button type="button" class="close popup__close" id="close-filter"><span></span></button>
+          {{ min_price_product }}
+          <form method="GET" class="filter-form">
+            {% for field in filter_form %}
+            <div class="filter__body">
+              <label class="filter__label">{{ field.label }}</label>
+              <div class="filter__inner">
+                {% for checkbox in field %}
+                <div class="form__group-boolean">
+                  {{ checkbox.tag }}
+                  <label class="checkbox-label" for="{{ checkbox.id_for_label }}">{{ checkbox.choice_label }}</label>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+            <button type=" submit" class="filter__submit">Фильтровать</button>
+          </form>
+        </div>
+        {% endif %}
+        <div class="category-details__col category-details__col--last">
+          <button type="button" class="category-details__filter"><i
+              class="fa-solid fa-arrow-up-wide-short"></i></button>
+          {% if products %}
+          <div class="index-catalog__cards">{% for product in products %}
+            {% include "../../includes/card.html" with product=product %} {% endfor %}</div>
+          {% else %}
+          <div class="empty-info">
+            <p>Товара нет</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="pagging">
+        <a href="{% if products.has_previous %}?{% chenge_params page=products.previous_page_number %}{% else %}#{% endif %}"
+          class="pagging__arrow {% if not products.has_previous%}disabled{% endif %}">«</a>
+        <ul class="pagging__list">
+          {% for page in products.paginator.page_range %}
+          {% if page >= products.number|add:-2 and page <= products.number|add:2 %} <li>
+            <a href="?{% chenge_params page=page %}"
+              class="pagging__item {% if products.number == page %}_active{% endif %}">{{page}}</a>
+            </li>
+            {% endif %} {% endfor %}
+        </ul>
+        <a href="{% if products.has_next %}?{% chenge_params page=products.next_page_number %}{% else %}#{% endif %}"
+          class="pagging__arrow">»</a>
+      </div>
+    </div>
+  </section>
+  <div class="category-detail__text">
+    <div class="category-detail__container">
+      <div class="text">
+        {{category.description|safe}}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

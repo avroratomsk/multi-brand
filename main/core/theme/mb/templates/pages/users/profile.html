@@ -1,0 +1,143 @@
+{% extends "base.html" %} {% load shop_tags %} {% load static %}{% block content %}
+<main>
+  <section class="profile">
+    <div class="profile__container">
+      <div class="profile__inner">
+        <h1 class="profile__title _title-h2">Профиль пользователя</h1>
+        <div class="profile__row">
+          <div class="profile__col">
+
+            <form action="{% url 'user:profile' %}" method="POST" enctype="multipart/form-data" class="form">
+              {% csrf_token %}
+              <div class="form__group">
+                <div class="profile__avatar">
+                  <img src="{% static 'theme/mb/images/avatar.svg' %}" alt="">
+                </div>
+                <input type="file" class="form-controls" id="avatar" accept="image/*" />
+              </div>
+              <div class="form__group">
+                <label for="id_first_name" class="form__label">Имя*</label>
+                <input type="text" class="form__controls" name="first_name" id="id_first_name"
+                  placeholder="Введите ваше имя" value="{{ form.first_name.value }}" required />
+              </div>
+              <div class="form__group">
+                <label for="id_last_name" class="form__label">Фамилия*</label>
+                <input type="text" class="form__controls" name="last_name" id="id_last_name"
+                  placeholder="Введите вашу фамилию" value="{{ form.last_name.value }}" required />
+              </div>
+              <div class="form__group">
+                <label for="id_username" class="form__label">Имя пользователя*</label>
+                <input type="text" class="form__controls" name="username" id="id_username"
+                  placeholder="Введите ваше имя пользователя" value="{{ form.username.value }}" required />
+              </div>
+              <div class="form__group">
+                <label for="id_email" class="form__label">Email*</label>
+                <input type="email" class="form__controls" name="email" id="id_email"
+                  placeholder="Введите ваш email *youremail@example.com" value="{{ form.email.value }}" required />
+              </div>
+              <button type="submit" class="form__submit">Сохранить</button>
+            </form>
+          </div>
+          <div class="profile__col">
+            <div class="profile__order">
+              <h2 class="profile__title-h2 _title-h2">Мои заказы</h2>
+              <div class="profile__item">
+                <div class="profile__item-header">
+                  Заказ № 256 - 09 сентября 2023 9:04 <span>|</span> Статус:<strong class="process"> В
+                    обработке</strong>
+                </div>
+                <div class="profile__item-body">
+                  <table class="profile__table">
+                    <thead>
+                      <tr>
+                        <th>Товар</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Общая стоимость</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a class="profile__item-link" href="#">Комплект стол и три стула</a></td>
+                        <td>1</td>
+                        <td>255.00 руб.</td>
+                        <td>255.00 руб.</td>
+                      </tr>
+                      <tr>
+                        <td><a class="profile__item-link" href="#">Комплект стол и три стула</a></td>
+                        <td>1</td>
+                        <td>255.00 руб.</td>
+                        <td>255.00 руб.</td>
+                      </tr>
+                      <tr>
+                        <td><a class="profile__item-link" href="#">Комплект стол и три стула</a></td>
+                        <td>1</td>
+                        <td>255.00 руб.</td>
+                        <td>255.00 руб.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="profile__item">
+                <div class="profile__item-header">
+                  Заказ № 256 - 09 сентября 2023 9:04 <span>|</span> Статус:<strong class="danger">Отмена</strong>
+                </div>
+                <div class="profile__item-body">
+                  <table class="profile__table">
+                    <thead>
+                      <tr>
+                        <th>Товар</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Общая стоимость</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a class="profile__item-link" href="#">Букет цветов</a></td>
+                        <td>1</td>
+                        <td>255.00 руб.</td>
+                        <td>255.00 руб.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="profile__item">
+                <div class="profile__item-header">
+                  Заказ № 256 - 09 сентября 2023 9:04 <span>|</span> Статус:<strong class="success">Выполнен</strong>
+                </div>
+                <div class="profile__item-body">
+                  <table class="profile__table">
+                    <thead>
+                      <tr>
+                        <th>Товар</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Общая стоимость</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a class="profile__item-link" href="#">Букет цветов</a></td>
+                        <td>1</td>
+                        <td>255.00 руб.</td>
+                        <td>255.00 руб.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="profile__total-sum">
+              <p><b>Итоговая сумма</b><span>:</span> 255.00 руб.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+</body>

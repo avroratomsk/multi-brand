@@ -1,0 +1,24 @@
+{% load static %}{% load carts_tag %}{% user_carts request as carts %}
+<div class="header">
+  <div class="header__container">
+    <div class="header__inner">
+      <button type="button" class="header__callback">Заказать звонок
+        <img src="{% static 'theme/mb/images/icon/phone-blue.svg' %}" alt="">
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#">Каталог</a><img
+              src="{% static 'theme/mb/images/icon/chevron-down_white.svg' %}" alt=""></li>
+          <li class="nav__item"><a href="#">Услуги</a><img
+              src="{% static 'theme/mb/images/icon/chevron-down_white.svg' %}" alt=""></li>
+          <li class="nav__item"><a href="#">Гравировка</a></li>
+          <li class="nav__item"><a href="#">Установка</a></li>
+          <li class="nav__item"><a href="#">Оплата</a></li>
+          <li class="nav__item"><a href="#">Наши работы</a></li>
+          <li class="nav__item"><a href="#">О нас</a></li>
+          <li class="nav__item"><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

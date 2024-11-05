@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Мемориальные услуги компании Акрополь
+{% endblock %}
+{% block description %}
+Заказывайте профессиональные услуги по гравировке на памятниках, установке памятников и благоустройству могил.
+Гарантируем качественное выполнение работ, долговечность и аккуратность. Создайте достойную память о близких с
+"Акрополь"
+{% endblock %}
+{% block keywords %}
+ритуальные услуги томск, мемориальные услуги, ритуальные услуги
+{% endblock %}
+{% block content %}
+
+<main class="page service-page">
+  <div class="hero">
+    <div class="hero__container">
+      <img src="{% static 'theme/mb/images/memorial_complex.png' %}" alt="Мемориальные услуги компании Акрополь"
+        title="Мемориальные услуги компании Акрополь" class="hero__image" />
+      <div class="hero__inner">
+        <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+            class="breadcrumbs__item">
+            Главная
+            <meta itemprop="position" content="1" />
+          </a>
+          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="breadcrumbs__item">
+            Услуги
+            <meta itemprop="position" content="2" />
+          </span>
+        </div>
+        <h1 class="hero__title">
+          <span>Мемориальные улуги</span><br />
+          компании Акрополь
+        </h1>
+        <p class="hero__subtitle">Благоустройство могил включает комплекс работ, направленных на создание
+          привлекательного и ухоженного вида захоронения.</p>
+        <div class="hero__buttons">
+          <button type="button" class="hero__button hero__button--small"
+            data-popup="consultation-form">Проконсультироваться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="service-page">
+    <div class="service-page__container">
+      <h2 class="service-page__title _title-h2">Наши услуги</h2>
+      <div class="service-page__items">
+        <a href="{% url 'service_new' %}" class="service-page__item"
+          style="background-image: url({% static 'theme/mb/images/texture.jpg' %})">
+          <div class="service-page__icon">
+            <img src="{% static 'theme/mb/images/serice-5.png' %}" alt="Установка памятника"
+              title="Установка памятника" />
+          </div>
+          <p class="service-page__item-text">Установка памятника</p>
+        </a>
+        <a href="{% url 'service_grav' %}" class="service-page__item"
+          style="background-image: url({% static 'theme/mb/images/texture.jpg' %})">
+          <div class="service-page__icon">
+            <img src="{% static 'theme/mb/images/service-6.png' %}" alt="Гравировка на памятнике"
+              title="Гравировка на памятнике" />
+          </div>
+          <p class="service-page__item-text">Гравировка на памятнике</p>
+        </a>
+        <a href="{% url 'service_model' %}" class="service-page__item"
+          style="background-image: url({% static 'theme/mb/images/texture.jpg' %})">
+          <div class="service-page__icon">
+            <img src="{% static 'theme/mb/images/service-7.png' %}" alt="3D моделирование" title="3D моделирование" />
+          </div>
+          <p class="service-page__item-text">3D моделирование</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="service-content">
+    <div class="service-content__container">
+      <div class="service-content__inner">
+        <div class="service-content__row">
+          <div class="service-content__col">
+            <div class="service-content__text _text">
+              <p>Гранитная мастерская «Акрополь» предлагает услуги всех видов и типов благоустройства могил в Томске.
+              </p>
+              <p>
+                Здесь выполняют облицовку гранитом и мрамором, укладку тротуарной плитки, брусчатки и газона, засыпку
+                мраморной крошки и щебёнки, установку столов и лавочек,
+                изготовление по индивидуальным эскизам, а также многое другое по желанию и фантазии клиента.
+              </p>
+              <p>Все работы проводятся с использованием качественных материалов и профессионального инструмента.</p>
+              <p>Для заказа услуг необходимо связаться с менеджером по телефону <a href="tel:+73822224018">8 (3822)
+                  22-40-18</a>, <a href="tel:+73822210915">8 (3822) 210-915</a></p>
+            </div>
+            <a href="" class="service-content__btn _btn">Перейти в каталог</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="service-advantge">
+    <div class="service-advantge__container">
+      <h2 class="_title-h2">Наши преимущества</h2>
+      <div class="service-advantge__grid">
+        <div class="service-advantge__item">
+          <div class="service-advantge__item-icon">
+            <img src="{% static 'theme/mb/images/icon-1.png' %}"
+              alt="Сделаем памятник по каталогу, так и индивидуальный заказ"
+              title="Сделаем памятник по каталогу, так и индивидуальный заказ" />
+          </div>
+          <p class="service-advantge__item-text">Сделаем памятник по каталогу, так и индивидуальный заказ</p>
+        </div>
+        <div class="service-advantge__item">
+          <div class="service-advantge__item-icon">
+            <img src="{% static 'theme/mb/images/icon-2.svg' %}"
+              alt="Предоставим бесплтаное хранение памятника, до самовывоза"
+              title="Предоставим бесплтаное хранение памятника, до самовывоза" />
+          </div>
+          <p class="service-advantge__item-text">Предоставим бесплтаное хранение памятника, до самовывоза</p>
+        </div>
+        <div class="service-advantge__item">
+          <div class="service-advantge__item-icon">
+            <img src="{% static 'theme/mb/images/icon-4.png' %}" alt="Доставим памятник в любой город"
+              title="Доставим памятник в любой город" />
+          </div>
+          <p class="service-advantge__item-text">Доставим памятник в любой город</p>
+        </div>
+        <div class="service-advantge__item">
+          <div class="service-advantge__item-icon">
+            <img src="{% static 'theme/mb/images/icon-3.svg' %}"
+              alt="Поможем с установкой, у нас есть собственные установщики"
+              title="Поможем с установкой, у нас есть собственные установщики" />
+          </div>
+          <p class="service-advantge__item-text">Поможем с установкой, у нас есть собственные установщики</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "../../includes/contact-block.html" %}
+</main>
+{% endblock %}

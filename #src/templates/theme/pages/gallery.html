@@ -1,0 +1,109 @@
+{% extends 'base.html' %} {% load static %}{% load carts_tag %}{% load thumbnail %}
+{% block title %}
+Галерея наших работ из мрамора и гранита | Акрополь
+{% endblock %}
+{% block description %}
+На нашем сайты вы можете ознакомится с примерами оформления памятников, надгробий, мемориальных комплексов. Все работы
+выполнены нашими мастерами.
+{% endblock %}
+{% block keywords %}
+наши работы, портфолио памятников на могилу, фотографии памятников на могилу
+{% endblock %}
+{% block content %}
+<main class="page">
+  <div class="hero">
+    <div class="hero__container">
+      <img src="{% static 'theme/mb/images/gallery.png' %}" alt="Наши работы из мрамора и гранита"
+        title="Наши работы из мрамора и гранита" class="hero__image" />
+      <div class="hero__inner">
+        <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+            class="breadcrumbs__item">
+            Главная
+            <meta itemprop="position" content="1" />
+          </a>
+          <span itemprop="name" class="breadcrumbs__item">
+            Наши работы
+            <meta itemprop="position" content="2" />
+          </span>
+        </div>
+        <h1 class="hero__title">
+          <span>Наши работы</span><br />
+          из мрамора и гранита
+        </h1>
+        <p class="hero__subtitle">
+          На нашем сайте собран целый каталог фотографий памятников и надгробий изготовленных нашими мастерами. Вы
+          можете посмотреть примеры оформления памятников, надгробий,
+          мемориальных комплексов. Мы профессионально подходим к делу. Вы можете убедится в этом, посмотрев фотографии
+          наших работ.
+        </p>
+        <div class="hero__buttons">
+          <a href="{% url 'category' %}" class="hero__button hero__button--blue">Посмотреть каталог</a>
+          <button type="button" class="hero__button hero__button--small" data-popup="consultation-form"
+            data-order="Услуги">?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="gallery">
+    <div class="gallery__container">
+      <div class="gallery__inner">
+        {% comment %}
+        <div class="gallery__category">
+          {% if gallery_category %} {% for gal_cat in gallery_category %}
+          <button type="button" data-id="{{ gal_cat.slug }}" class="gallery__category-link">{{ gal_cat.name }}</button>
+          {% endfor %} {% endif %}
+        </div>
+        {% endcomment %}
+        <div class="gallery__content">
+          <div class="gallery__images" id="{{ gal_cat.slug }}">
+            <h2 class="gallery__images-title">{{ gal_cat.name }}</h2>
+            <div class="gallery__images-grid">
+              {% for image in gallery %}
+              <a href="{{ image.image.url }}" data-gall="{{ image.category.slug }}" class="gallery__image">
+                {% thumbnail image.image "368x350" format="WEBP" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ image.name }}"
+                  title="{{ image.name }}" />
+                {% endthumbnail %}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="category-detail__text">
+    <div class="category-detail__container">
+      <div class="text">
+        <p>
+          Памятники, посвященные героям специальной военной операции (СВО), имеют особое значение для семей и близких
+          погибших. Они символизируют память о мужестве, героизме и самоотверженности наших солдат. В нашем каталоге
+          представлены разнообразные варианты памятников, включая гранитные, комбинированные и элитные модели, а также
+          мемориальные комплексы, которые могут стать достойным местом для увековечения памяти.
+        </p>
+        <p>
+          Для тех, кто ищет что-то особенное, мы предлагаем <a href="/category/elitnyie-modeli/">элитные модели</a>
+          памятников, выполненные с использованием высококачественных материалов и эксклюзивных дизайнов. Эти памятники
+          подчеркнут уникальность каждого героя и станут достойным олицетворением их подвига. Также мы предлагаем
+          разнообразные дизайны, включая <a href="/service/gravirovka/">гравировку</a>, позволяющую добавить
+          индивидуальные элементы.
+        </p>
+        <p>
+          Наша мастерская предлагает широкий ассортимент <a href="/category/">памятников</a>, специализируясь на
+          индивидуальных заказах. Мы готовы помочь вам выбрать идеальный памятник участникам СВО, который будет нести в
+          себе память о героизме и мужестве. Наша команда опытных мастеров обеспечит высокое качество исполнения и
+          профессиональный подход к каждому проекту.
+        </p>
+        <p>
+          Не забудьте, что памятники погибшим на СВО должны быть не только красивыми, но и отражать личность вашего
+          близкого.
+        </p>
+        <!-- {{gallery.description|safe}} -->
+      </div>
+    </div>
+  </div>
+  {% include "../includes/contact-block.html" %}
+  {% include "../components/map.html" %}
+</main>
+{% endblock %}

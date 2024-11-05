@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}{{ article.meta_title }}{% endblock %}
+{% block description %}{{ article.meta_description }}{% endblock %}
+{% block keywords %}{{ article.meta_keywords }}{% endblock %}
+{% block content %}
+
+<main>
+  <div class="banner">
+    <div class="banner__container">
+      <img src="{{ article.image.url }}" alt="{{article.name}}" title="{{article.name}}" class="banner__image">
+      <div class="banner__inner">
+        <div class="banner__content">
+
+          <h1 class="_title">
+            {% if article.meta_h1 %}
+            {{article.meta_h1}}
+            {% else %}
+            {{ article.name }}
+            {% endif %}
+          </h1>
+          {% if article.subtitle_text %}
+          <p>
+            {{ article.subtitle_text }}
+          </p>
+          {% endif %}
+          <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+              class="breadcrumbs__item">
+              Главная
+              <meta itemprop="position" content="1" />
+            </a>
+            <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+              class="breadcrumbs__item">
+              Статьи
+              <meta itemprop="position" content="2" />
+            </a>
+            <span itemprop="name" class="breadcrumbs__item">
+              {{ article.name }}
+              <meta itemprop="position" content="3" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blog-detail">
+    <div class="blog-detail__container">
+      <div class="blog-detail__top">
+        <p class="blog-detail__date">{{article.date_creation|date:"j E Y"}}</p>
+        <div class="blog-detail__views">
+          <div class="blog-detail__eye">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 9a3 3 0 1 1 0 6 3 3 0 1 1 0-6m0-4.5c5 0 9.27 3.1 11 7.5-1.73 4.4-6 7.5-11 7.5S2.73 16.4 1 12c1.73-4.4 6-7.5 11-7.5M3.18 12a9.82 9.82 0 0 0 17.64 0 9.82 9.82 0 0 0-17.64 0z">
+              </path>
+            </svg>
+            <span>{{ article.view_count }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-detail__content">
+        {{ article.description|safe }}
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

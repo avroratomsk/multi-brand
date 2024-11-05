@@ -1,0 +1,15 @@
+{% load static %}
+<div class="mobile-nav">
+  <a href="{% url 'category' %}" class="mobile-nav__item">
+    <span>Каталог</span>
+    <img src="{% static 'theme/mb/images/icon/catalog.svg' %}" alt="">
+  </a>
+  <button class="mobile-nav__item">
+    <span>Корзина</span>
+    <img src="{% static 'theme/mb/images/icon/cart-mobile.svg' %}" alt="">
+  </button>
+  <button class="mobile-nav__item">
+    <span>Меню</span>
+    <img src="{% static 'theme/mb/images/icon/menu-burger.svg' %}" alt="">
+  </button>
+</div>

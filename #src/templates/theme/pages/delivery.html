@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}
+Доставка и оплата в Томске | Акрополь
+{% endblock %}
+{% block description %}
+Оплатить можно любым доступным способом, наличными, картой, переводом, QR-кодом и т.д. Так же компания «Акрополь»
+предоставляет беспроцентную рассрочку до 12 месяцев. При оформлении рассрочки, акции и скидки не действуют.
+{% endblock %}
+{% block keywords %}
+доставка памятников, оплата памятников, доставка надгробий, опалата памятника на могилу
+{% endblock %}
+{% block content %}
+<main>
+  <div class="hero">
+    <div class="hero__container">
+      <img src="{% static 'theme/mb/images/delivery.png' %}" alt="Доставка и оплата" title="Доставка и оплата"
+        class="hero__image">
+      <div class="hero__inner">
+        <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+            class="breadcrumbs__item">
+            Главная
+            <meta itemprop="position" content="1" />
+          </a>
+          <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+            class="breadcrumbs__item">
+            Услуги
+            <meta itemprop="position" content="2" />
+          </a>
+          <span itemprop="name" class="breadcrumbs__item">
+            Доставка и оплата
+            <meta itemprop="position" content="3" />
+          </span>
+        </div>
+        <h1 class="hero__title">Доставка и оплата</h1>
+        <div class="hero__buttons">
+          <button type="button" class="hero__button hero__button--blue" data-popup="consultation-form"
+            data-order="Доставка и оплата">Проконсультироватся</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="delivery">
+    <div class="delivery__container">
+      <div class="delivery__content">
+        <div class="text">
+          <p><b>Оплата производится в два этапа:</b></p>
+          <br>
+          <ul>
+            <li>1)Предоплата в размере от 30% до 100% при заключении договора.</li>
+            <li>2)Остаток оплаты после полного изготовления заказа.</li>
+          </ul>
+          <br>
+          <p>
+            Оплатить можно любым доступным способом, наличными, картой, переводом, QR-кодом и т.д.
+            Так же компания «Акрополь» предоставляет беспроцентную рассрочку до 12 месяцев.
+            При оформлении рассрочки, акции и скидки не действуют.
+          </p>
+          <!-- {{ delivery_page.description|safe }} -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

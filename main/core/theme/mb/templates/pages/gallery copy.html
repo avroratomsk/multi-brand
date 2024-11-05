@@ -1,0 +1,133 @@
+{% extends 'base.html' %} {% load static %}{% load carts_tag %}{% load thumbnail %}{% block content %}
+<main class="page">
+  <div class="hero">
+    <div class="hero__container">
+      <img src="{% static 'theme/mb/images/gallery.png' %}" alt="" class="hero__image" />
+      <div class="hero__inner">
+        <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="breadcrumbs__item">
+            Главная
+            <meta itemprop="position" content="1" />
+          </a>
+          <span itemprop="name" class="breadcrumbs__item">
+            Наши работы
+            <meta itemprop="position" content="2" />
+          </span>
+        </div>
+        <h1 class="hero__title">
+          <span>Наши работы</span><br />
+          из мрамора и гранита
+        </h1>
+        <p class="hero__subtitle">
+          На нашем сайте собран целый каталог фотографий памятников и надгробий изготовленных нашими мастерами. Вы можете посмотреть примеры оформления памятников, надгробий,
+          мемориальных комплексов. Мы профессионально подходим к делу. Вы можете убедится в этом, посмотрев фотографии наших работ.
+        </p>
+        <div class="hero__buttons">
+          <a href="{% url 'category' %}" class="hero__button hero__button--blue">Посмотреть каталог</a>
+          <button type="button" class="hero__button hero__button--small" data-popup="consultation-form" data-order="Услуги">?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="gallery">
+    <div class="gallery__container">
+      <div class="gallery__inner">
+        {% comment %}
+        <div class="gallery__category">
+          {% if gallery_category %} {% for gal_cat in gallery_category %}
+          <button type="button" data-id="{{ gal_cat.slug }}" class="gallery__category-link">{{ gal_cat.name }}</button>
+          {% endfor %} {% endif %}
+        </div>
+        {% endcomment %}
+        <div class="gallery__content">
+          <div class="gallery__images" id="{{ gal_cat.slug }}">
+            <h2 class="gallery__images-title">{{ gal_cat.name }}</h2>
+            <div class="gallery__images-grid">
+              {% for image in gallery %}
+              <a href="{{ image.image.url }}" data-gall="{{ image.category.slug }}" class="gallery__image">
+                {% thumbnail image.image "368x350" format="WEBP" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ image.name }}" title="{{ image.name }}" />
+                {% endthumbnail %}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="index-contact">
+    <div class="index-contact__container">
+      <div class="index-contact__grid">
+        <div class="index-contact__item">
+          <h2 class="index-contact__title">Мы готовы ответить на все <span>ваши вопросы</span></h2>
+          <ul class="index-contact__list">
+            <li>
+              <img src="{% static 'theme/mb/images/icon/check-green.svg' %}" alt="" class="index-contact__list-icon" />
+              <p class="index-contact__list-text"><span>Проконсультируем</span> по материалу памятника</p>
+            </li>
+            <li>
+              <img src="{% static 'theme/mb/images/icon/check-green.svg' %}" alt="" class="index-contact__list-icon" />
+              <p class="index-contact__list-text"><span>Поможем определиться </span>с типом памятника и заказать его производство</p>
+            </li>
+            <li>
+              <img src="{% static 'theme/mb/images/icon/check-green.svg' %}" alt="" class="index-contact__list-icon" />
+              <p class="index-contact__list-text"><span>Расскажем все</span> про доставку и установку</p>
+            </li>
+          </ul>
+        </div>
+        <div class="index-contact__item">
+          <div class="index-contact__mobile" style="background-image: url('{% static 'theme/mb/images/mobile.png' %}')">
+            <div class="index-contact__logo">
+              <img src="{% static 'theme/mb/images/logo-black.png' %}" alt="" />
+            </div>
+            <p class="index-contact__mobile-text">
+              Свяжитесь с нами! <br />
+              Мы обязательно поможем!
+            </p>
+            <div class="index-contact__mobile-phones">
+              <a href="">+7(3822)-210-915<img src="{% static 'theme/mb/images/icon/phone-black.svg' %}" alt="" /></a>
+              <a href="">+7-900-921-09-15<img src="{% static 'theme/mb/images/icon/phone-mobile.svg' %}" alt="" /></a>
+            </div>
+            <a href="" class="index-contact__call _btn">Позвонить</a>
+          </div>
+        </div>
+        <div class="index-contact__item">
+          <form action="" method="POST" class="form index-contact__form">
+            <h3 class="form__title">Заполните форму</h3>
+            <p class="form__text">Оставьте заявку - мы обязательно с вами свяжемся</p>
+            <div class="form__inner">
+              <input type="text" name="name" id="id_name" class="form__controls" placeholder="Ваше имя" />
+              <input type="tel" name="phone" id="id_phone" class="form__controls" placeholder="Номер телефона" />
+              <div class="form__social-inner">
+                <label for="tg" class="form__controls-label">
+                  <input type="checkbox" id="tg" name="social" />
+                  <img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt="" />
+                </label>
+                <label for="vk" class="form__controls-label">
+                  <input type="checkbox" id="vk" name="social" />
+                  <img src="{% static 'theme/mb/images/icon/vk.svg' %}" alt="" />
+                </label>
+                <label for="wh" class="form__controls-label">
+                  <input type="checkbox" id="wh" name="social" />
+                  <img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt="" />
+                </label>
+              </div>
+              <div class="form__bottom">
+                <button type="submit" class="form__submit _btn">Отправить</button>
+                <div class="form__agreement">
+                  <input type="checkbox" name="agrement" id="id_agrement" checked />
+                  <label for="id_agreement" class="form__label">
+                    Я даю свое согласие на обработку персональных данных и соглашаюсь с <a href="">политикой конфиденциальности</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "../components/map.html" %}
+</main>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %} {% load static %} 
+{% block title %}
+Контактная информация | Акрополь
+{% endblock %}
+{% block description %}
+Контактная информация мастерской Акрополь в городе Томск. Адреса, график работы, почта, номера телефонов, реквизиты. 
+Телефоны для связи +7(900) 921-09-15, +7(903) 955-40-18
+{% endblock %}
+{% block keywords %}
+контакты акрополь, контактная информация акрополь, номер телефона акрополь, телефон акрополь
+{% endblock %}
+{% block content %}
+
+<main>
+	<div class="contact">
+		<div class="contact__container">
+			<div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+				<a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+					class="breadcrumbs__item">
+					Главная
+					<meta itemprop="position" content="1" />
+				</a>
+				<span itemprop="name" class="breadcrumbs__item">
+					Контакты
+					<meta itemprop="position" content="2" />
+				</span>
+			</div>
+			<h1 class="contact__title _title-h2">Контакты комании <span>Акрополь</span></h1>
+			<div class="contact__note">
+				<p>
+					​Мастерская по изготовлению памятников и надгробий. Цены на сайте носят ознакомительный характер, точную
+					стоимость уточняйте по телефону. <br>С ценами и товаром вы можете ознакомится на странице
+					<a href="{% url 'category' %}">каталога</a>
+				</p>
+			</div>
+			<div class="contact__grid">
+				<div class="contact__item item-contact">
+					<h2 class="item-contact__title">Контакты</h2>
+					<div class="item-contact__row">
+						<img src="{% static 'theme/mb/images/icon/phone-blue.svg' %}" alt="Иконка телефона" title="Иконка телефона">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">Яковлева, 41а</p>
+							<a href="tel:+79009210915" class="item-contact__row-small">+7(900) 921-09-15</a>
+						</div>
+					</div>
+					<div class="item-contact__row">
+						<img src="{% static 'theme/mb/images/icon/phone-blue.svg' %}" alt="Иконка телефона" title="Иконка телефона">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">Демьяна Бедного, 16а ст1</p>
+							<a href="tel:+79039554018" class="item-contact__row-small">+7(903) 955-40-18</a>
+						</div>
+					</div>
+					<div class="item-contact__row" id="time-work">
+						<img src="{% static 'theme/mb/images/icon/location.svg' %}" alt="Иконка телефона" title="Иконка телефона">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">Сегодня</p>
+							<p class="item-contact__row-small">c 09:00 до 18:00</p>
+						</div>
+						<div class="item-contact__hidden">
+							<p>В воскресенье режим работы по догоовренности</p>
+							<!-- <p>Пн: c 09:00 до 18:00</p>
+							<p>Вт: c 09:00 до 18:00</p>
+							<p>Ср: c 09:00 до 18:00</p>
+							<p>Чт: c 09:00 до 18:00</p>
+							<p>Пт: c 09:00 до 18:00</p>
+							<p>Сб: c 09:00 до 18:00</p>
+							<p>Вс: c 09:00 до 18:00</p> -->
+						</div>
+					</div>
+					<div class="item-contact__row">
+						<img src="{% static 'theme/mb/images/icon/location.svg' %}" alt="Иконка телефона" title="Иконка телефона">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">Email</p>
+							<p class="item-contact__row-small">{{ site_settings.email }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="contact__item item-contact">
+					<h2 class="item-contact__title">Реквизиты</h2>
+					<div class="item-contact__row">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">Юридическое название:</p>
+							<p class="item-contact__row-small">ООО "Акрополь"</p>
+						</div>
+					</div>
+					<div class="item-contact__row">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">ИНН:</p>
+							<p class="item-contact__row-small">7000002402</p>
+						</div>
+					</div>
+					<div class="item-contact__row">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">КПП:</p>
+							<p class="item-contact__row-small">700001001</p>
+						</div>
+					</div>
+					<div class="item-contact__row">
+						<div class="item-contact__row-info">
+							<p class="item-contact__row-big">ОГРН:</p>
+							<p class="item-contact__row-small">1227000009785</p>
+						</div>
+					</div>
+				</div>
+				<div class="contact__item item-contact">
+					<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A75305f83b850436ebc3da0993be82eaef079bba8da91ecd1f39e5664653e0823&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% comment %} {% include "../includes/contact-block.html" %} {% endcomment %}
+</main>
+
+</body>
+{% endblock %}

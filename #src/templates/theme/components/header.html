@@ -1,0 +1,42 @@
+{% load static %}{% load carts_tag %}{% user_carts request as carts %}
+<div class="header">
+  <div class="header__container">
+    <div class="header__inner">
+      <a href="" class="header__logo">
+        <img src="{% static 'theme/mb/images/logo.png' %}" alt="">
+      </a>
+      <nav class="header__nav nav">
+        <button class="nav__close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="" class="nav__link">Почему мы ?</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">Отзывы</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">Где мы находимся</a>
+          </li>
+        </ul>
+        <div class="header__socials action-mb">
+          <a href="tel:+79189702244">+7 (918) 970-22-44</a>
+          <a href=""><img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt=""></a>
+          <a href=""><img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt=""></a>
+        </div>
+      </nav>
+      <button class="header__burger" id="burger-btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="header__actions action-pc">
+        <p class="header__text">Позвоните нам прямо сейчас!</p>
+        <div class="header__socials">
+          <a href="tel:+79189702244">+7 (918) 970-22-44</a>
+          <a href=""><img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt=""></a>
+          <a href=""><img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

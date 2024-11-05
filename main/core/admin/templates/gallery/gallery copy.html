@@ -1,0 +1,32 @@
+{% extends 'admin_base.html' %} {% load shop_tags %} {% load thumbnail %} {% load static %} {% block body %}
+
+<div class="page">
+  <div class="page__inner">
+    <div class="page__add">
+      <h1 class="page__title">Галерея</h1>
+      <a href="{% url 'product_add' %}" class="page__add-btn">
+        <img src="{% static 'theme/mb/images/admin/add.svg' %}" alt="" />
+        Добавить
+      </a>
+    </div>
+    <div class="gallery">
+      <div class="gallery__top"></div>
+      <div class="gallery__grid">
+        <div class="gallery__item">
+          <div class="gallery__image">
+            <img src="{% static 'theme/mb/images/no-image.png' %}" alt="">
+          </div>
+          <a href="#" class="gallery__name">Название или альт если есть</a>
+        </div>
+        <div class="gallery__item">
+          <div class="gallery__image">
+            <img src="{% static 'theme/mb/images/no-image.png' %}" alt="">
+          </div>
+          <a href="#" class="gallery__name">Название или альт если есть</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

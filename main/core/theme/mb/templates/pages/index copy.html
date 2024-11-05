@@ -1,0 +1,323 @@
+{% extends 'base.html' %} {% load static %}{% load carts_tag %}{% load thumbnail %}{% block content %}
+<main class="page">
+  <section class="main">
+    <img src="{% static 'theme/mb/images/bg-main.jpg' %}" alt="" class="main__bg" />
+    <div class="main__container">
+      <div class="main__top top-main">
+        <div class="top-main__left">
+          <div class="top-main__item">
+            <div class="top-main__address">Яковлева, 41а</div>
+            <a href="tel:+73822210915" class="top-main__phone"
+              >+7(3822)-210-915
+              <img src="{% static 'theme/mb/images/icon/phone-blue.svg' %}" alt="" />
+            </a>
+          </div>
+          <div class="top-main__item">
+            <div class="top-main__address">Демьяна Бедного, 16а ст1</div>
+            <a href="tel:+73822224018" class="top-main__phone"
+              >+7(3822)-224-018
+              <img src="{% static 'theme/mb/images/icon/phone-blue.svg' %}" alt="" />
+            </a>
+          </div>
+          <div class="top-main__item"></div>
+        </div>
+        <div class="top-main__middle">
+          <a href="/" class="top-main__logo">
+            <img src="{% static 'theme/mb/images/logo.png' %}" alt="" />
+          </a>
+        </div>
+        <div class="top-main__right">
+          <div class="top-main__right-row">Томск <img src="{% static 'theme/mb/images/icon/chevron-down.svg' %}" alt="" /></div>
+          <div class="top-main__right-row">
+            <button type="button" class="top-main__callback">
+              Заказать звонок
+              <img src="{% static 'theme/mb/images/icon/phone-blue.svg' %}" alt="" />
+            </button>
+            <button type="button" class="top-main__callback" id="show-cart">
+              Корзина
+              <img src="{% static 'theme/mb/images/icon/cart.svg' %}" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="main__content content-main">
+        <h1 class="content-main__title">Изготовим и установим <span>надгробный памятник в томске</span></h1>
+        <a href="{% url 'category' %}" class="content-main__link _btn">Перейти в каталог</a>
+      </div>
+    </div>
+  </section>
+  <section class="index-stock">
+    <div class="index-stock__container">
+      <div class="index-stock__grid">
+        <div class="index-stock__item index-stock__item--first">
+          <img src="{% static 'theme/mb/images/arki.jpg' %}" alt="" class="index-stock__item-img" />
+          <h2 class="index-stock__item-title">Арки со <br />скидкой</h2>
+          <p class="index-stock__item-discount">20%</p>
+        </div>
+        <div class="index-stock__item">
+          <img src="{% static 'theme/mb/images/svo.jpg' %}" alt="" class="index-stock__item-img" />
+          <h2 class="index-stock__item-title">Памятники <br />солдатам <span>СВО</span></h2>
+        </div>
+        <div class="index-stock__item">
+          <img src="{% static 'theme/mb/images/memorial.jpg' %}" alt="" class="index-stock__item-img" />
+          <h2 class="index-stock__item-title">Мемориальные <br /><span>комплексы</span></h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="index-catalog">
+    <div class="index-catalog__container">
+      <h2 class="index-catalog__title">Каталог</h2>
+      <div class="index-catalog__inner">
+        <div class="index-catalog__category">
+          {% if category_menu %} {% for category in category_menu %}
+          <a href="{{ category.get_absolute_url }}" class="index-catalog__btn"> {{ category.name }} </a>
+          {% endfor %} {% endif %}
+        </div>
+        <div class="index-catalog__content">
+          <ul class="index-catalog__filter filter">
+            <li class="filter__item">
+              <span class="filter__item-text">Цвет</span>
+              <ul class="filter__sublist _active">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+            <li class="filter__item">
+              <span class="filter__item-text">Материал</span>
+              <ul class="filter__sublist">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+            <li class="filter__item">
+              <span class="filter__item-text">Высота</span>
+              <ul class="filter__sublist">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+            <li class="filter__item">
+              <span class="filter__item-text">Для кого</span>
+              <ul class="filter__sublist">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+            <li class="filter__item">
+              <span class="filter__item-text">Религия</span>
+              <ul class="filter__sublist">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+            <li class="filter__item">
+              <span class="filter__item-text">Порода камня</span>
+              <ul class="filter__sublist">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+            <li class="filter__item">
+              <span class="filter__item-text">Тип исполнения</span>
+              <ul class="filter__sublist">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+            <li class="filter__item">
+              <span class="filter__item-text">Цена</span>
+              <ul class="filter__sublist">
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Черный</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Серый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Голубой</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Фиолетовый</a></li>
+                <li class="filter__sublist-item"><a href="" class="filter__sublist-link">Светло-серый</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="index-catalog__cards">
+            {% if products %} {% for product in products %}
+            <div class="index-catalog__card card">
+              <div class="card__image">
+                {% if product.image %} {% thumbnail product.image "230x230" format="WEBP" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="product-click-image" alt="{{product.model}}" title="{{product.model}}" />
+                {% endthumbnail %} {% else %}
+                <img src="{% static 'theme/mb/images/no-image.png' %}" alt="" />
+                {% endif %}
+              </div>
+              <div class="card__content">
+                <a href="#" class="card__content-title">{{ product.model }}</a>
+                {% for chr in product.chars.all %} {% if chr.char_name.filter_name == "material" and forloop.counter <= 2 %}
+                <p class="card__content-char">Материал: {{ chr }}</p>
+                {% endif %} {% endfor %}
+                <div class="card__content-price">{{ product.price }} ₽</div>
+              </div>
+              <a href="{{ product.get_absolute_url }}" class="card__content-link">Подробнее</a>
+            </div>
+            {% endfor %} {% else %}
+            <div class="empty-info">
+              <p>Товара нет</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <!-- <div class="pagging">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">Дальше <img src="{% static 'theme/mb/images/icon/arrow-lomg.svg' %}" alt=""></a>
+      </div> -->
+    </div>
+  </section>
+  <section class="index-work">
+    <div class="index-work__container">
+      <h2 class="index-work__title">Наши работы</h2>
+      <div class="index-work__links">
+        <a href="#" class="_active">Все</a>
+        <a href="#">Солдатам СВО</a>
+        <a href="#">Арки</a>
+        <a href="#">Мемориальные комплексы</a>
+        <a href="#">С оградкой</a>
+      </div>
+      <div class="index-work__grid">
+        <div class="index-work__item">
+          <img src="{% static 'theme/mb/images/product.jpg' %}" alt="" />
+        </div>
+        <div class="index-work__item">
+          <img src="{% static 'theme/mb/images/product.jpg' %}" alt="" />
+        </div>
+        <div class="index-work__item">
+          <img src="{% static 'theme/mb/images/product.jpg' %}" alt="" />
+        </div>
+        <div class="index-work__item">
+          <img src="{% static 'theme/mb/images/product.jpg' %}" alt="" />
+        </div>
+        <div class="index-work__item">
+          <img src="{% static 'theme/mb/images/product.jpg' %}" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="index-reviews">
+    <div class="index-reviews__container">
+      <div class="index-reviews__inner">
+        <div class="index-reviews__info">
+          <p class="index-reviews__text">Мы будем очень рады получить Вашу обратную связь</p>
+          <button type="button" class="reviews__btn _btn">Оставить отзыв</button>
+        </div>
+        <!-- Тут доделать слайдер -->
+        <div class="index-reviews__reviews reviews">
+          <div class="reviews__slider swiper">
+            <div class="reviews__wrapper swiper-wrapper">
+              <div class="reviews__slide swiper-slide">
+                <p class="reviews__text">
+                  Заказала памятник и оформление захоронения, сделали всё отлично и раньше срока сдали работу, на отлично, рекомендую надёжная организация. Спасибо большое
+                </p>
+                <p class="reviews__name">Nina Kartashova</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="index-contact">
+    <div class="index-contact__container">
+      <div class="index-contact__grid">
+        <div class="index-contact__item">
+          <h2 class="index-contact__title">Мы готовы ответить на все <span>ваши вопросы</span></h2>
+          <ul class="index-contact__list">
+            <li>
+              <img src="{% static 'theme/mb/images/icon/check-green.svg' %}" alt="" class="index-contact__list-icon" />
+              <p class="index-contact__list-text"><span>Проконсультируем</span> по материалу памятника</p>
+            </li>
+            <li>
+              <img src="{% static 'theme/mb/images/icon/check-green.svg' %}" alt="" class="index-contact__list-icon" />
+              <p class="index-contact__list-text"><span>Поможем определиться </span>с типом памятника и заказать его производство</p>
+            </li>
+            <li>
+              <img src="{% static 'theme/mb/images/icon/check-green.svg' %}" alt="" class="index-contact__list-icon" />
+              <p class="index-contact__list-text"><span>Расскажем все</span> про доставку и установку</p>
+            </li>
+          </ul>
+        </div>
+        <div class="index-contact__item">
+          <div class="index-contact__mobile" style="background-image: url('{% static 'theme/mb/images/mobile.png' %}')">
+            <div class="index-contact__logo">
+              <img src="{% static 'theme/mb/images/logo-black.png' %}" alt="" />
+            </div>
+            <p class="index-contact__mobile-text">
+              Свяжитесь с нами! <br />
+              Мы обязательно поможем!
+            </p>
+            <div class="index-contact__mobile-phones">
+              <a href="">+7(3822)-210-915<img src="{% static 'theme/mb/images/icon/phone-black.svg' %}" alt="" /></a>
+              <a href="">+7-900-921-09-15<img src="{% static 'theme/mb/images/icon/phone-mobile.svg' %}" alt="" /></a>
+            </div>
+            <a href="" class="index-contact__call _btn">Позвонить</a>
+          </div>
+        </div>
+        <div class="index-contact__item">
+          <form action="" method="POST" class="form index-contact__form">
+            <h3 class="form__title">Заполните форму</h3>
+            <p class="form__text">Оставьте заявку - мы обязательно с вами свяжемся</p>
+            <div class="form__inner">
+              <input type="text" name="name" id="id_name" class="form__controls" placeholder="Ваше имя" />
+              <input type="tel" name="phone" id="id_phone" class="form__controls" placeholder="Номер телефона" />
+              <div class="form__social-inner">
+                <label for="tg" class="form__controls-label">
+                  <input type="checkbox" id="tg" name="social" />
+                  <img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt="" />
+                </label>
+                <label for="vk" class="form__controls-label">
+                  <input type="checkbox" id="vk" name="social" />
+                  <img src="{% static 'theme/mb/images/icon/vk.svg' %}" alt="" />
+                </label>
+                <label for="wh" class="form__controls-label">
+                  <input type="checkbox" id="wh" name="social" />
+                  <img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt="" />
+                </label>
+              </div>
+              <div class="form__bottom">
+                <button type="submit" class="form__submit _btn">Отправить</button>
+                <div class="form__agreement">
+                  <input type="checkbox" name="agrement" id="id_agrement" checked />
+                  <label for="id_agreement" class="form__label">
+                    Я даю свое согласие на обработку персональных данных и соглашаюсь с <a href="">политикой конфиденциальности</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "../components/map.html" %}
+</main>
+{% endblock %}

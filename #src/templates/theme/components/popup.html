@@ -1,0 +1,30 @@
+{% load static %}
+<div id="callback" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <button data-close type="button" class="popup__close"></button>
+      <div class="popup__loading">
+        <img src="{% static 'theme/mb/images/loading.gif' %}" alt="Загрузка" title="Загрузка" />
+      </div>
+      <h2 class="popup__title">Укажите свой номер телефона и какую запчасть необходимо найти</h2>
+      <form action="{% url 'callback' %}" class="popup__form" method="POST" id="callback-form">
+        {% csrf_token %}
+        <label for="" class="popup__label">Номер телефона</label>
+        <input type="text" name="name" class="popup__form-controls" placeholder="Ваше имя" required />
+        <label for="" class="popup__label">Что ищите? Введите название или артикул</label>
+        <input type="text" name="phone" class="popup__form-controls" placeholder="номер телефона" data-tel-input
+          required />
+        <button type="submit" class="popup__form-submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="success" class="notification">
+  <div class="notification__content">
+    <div class="notification__success-image">
+      <img src="{% static 'theme/mb/images/tick.png' %}" alt="Обратный звонок" title="Обратный звонок" />
+    </div>
+    <p class="notification__success-text">Успешно</p>
+  </div>
+</div>

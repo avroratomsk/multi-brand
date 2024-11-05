@@ -1,0 +1,7 @@
+{% if image.category.slug == gal_cat.slug %}
+<a href="{{ image.image.url }}" data-gall="{{ image.category.slug }}" class="index-work__item">
+  {% thumbnail image.image "368x350" format="WEBP" crop="center" as im %}
+  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" />
+  {% endthumbnail %}
+</a>
+{% endif %}

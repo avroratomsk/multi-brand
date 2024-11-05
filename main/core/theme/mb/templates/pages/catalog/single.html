@@ -1,0 +1,138 @@
+{% extends "base.html" %} {% load shop_tags %} {% load static %}{% block content %}
+  <main class="page">
+    <section class="single">
+      <div class="single__container">
+        <div class="products__top title-page">
+          <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <a href="/" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="breadcrumbs__item">
+              Главная
+              <meta itemprop="position" content="1" />
+            </a>
+            <a href="/" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="breadcrumbs__item">
+              Продукция
+              <meta itemprop="position" content="2" />
+            </a>
+            <span itemprop="name" class="breadcrumbs__item">
+              Ежедневное меню
+              <meta itemprop="position" content="3" />
+            </span>
+          </div>
+          <h1 class="products__title title-page__title">{{ title }}</h1>
+        </div>
+        <section class="single__day day-single">
+          {% for t in test %}
+          {{ t.name }}
+        {% endfor %}
+          <div class="day-single__inner">
+            <button type="button" id="open-search" class="day-single__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <div class="day-single__days">
+              {% for day in day_names %}
+                <a href="?day={{ day.slug }}" data-day="{{ day.slug }}" class="day-single__day {% if  request.GET.day  == day.slug %}_active{% endif %}">{{ day.name }}</a>
+              {% endfor %}
+              <div class="search" id="single-search">
+                <form action="{% url "search" %}" method="get">
+                  <input type="search" name="q" placeholder="Поиск" class="form-controls" />
+                  <button type="submit">Найти</button>
+                </form>
+              </div>
+            </div>
+            <button type="button" id="open-filter" class="day-single__btn">
+              <i class="fa-solid fa-sliders"></i>
+            </button>
+            <div class="filter-sort" id="filter-sort">
+              <input type="hidden" name="filter-value" id="filter-value" value="" />
+              <a href="#" class="filter-sort__value _active">По умолчанию</a>
+              <div class="filter-sort__value">По убыванию</div>
+              <div class="filter-sort__value">По возрастанию</div>
+            </div>
+          </div>
+        </section>
+
+        <div class="single-content">
+          <aside class="single-content__aside aside">
+            <div class="aside__options" id="option-part">
+              <h5 class="aside__title">Раздел</h5>
+
+              <div class="aside__filter">
+                <input type="hidden" value="" class="aside__filter-hidden" />
+                <ul class="aside__list">
+                  {% for category in category %}
+                  <li class="aside__item">
+                    <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div class="aside__options" id="option-part">
+              <h5 class="aside__title">Цена</h5>
+              <div class="price-input">
+                <div class="price-input__fields">
+                  <div class="price-input__field">
+                    <input type="number" class="price-input__min" value="25" />
+                  </div>
+                  <div class="separator"></div>
+                  <div class="price-input__field">
+                    <input type="number" class="price-input__max" value="75" />
+                  </div>
+                </div>
+                <div class="price-input__slider">
+                  <div class="price-input__progress" id="prodgress"></div>
+                </div>
+                <div class="price-input__range">
+                  <input type="range" name="range-min" id="range-min" min="0" max="10000" class="price-input__range-min" value="2500" />
+                  <input type="range" name="range-max" id="range-max" min="0" max="10000" class="price-input__range-max" value="7500" />
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div class="single-content__products products-single">
+            <div class="products-single__grid">
+              {% for product in products %}
+              <div class="card-product" data-id="{{ product.display_id }}">
+                <a href="#" class="card-product__image">
+                  {% if product.image %}
+                  <img src="{{ product.image.url }}" alt="{{ product.name }}" title="{{ product.name }}" />
+                  {% else %}
+                  <img src="{% static 'theme/mb/images/image-not-found.jpg' %}" alt="{{ product.name }}" title="{{ product.name }}" />
+                  {% endif %}
+                </a>
+                <a href="#" class="card-product__name">{{ product.name }}</a>
+                <a href="#" class="card-product__name">{{ product.category.name }} -  {{ product.day}}</a>
+
+                {% if product.discount %}
+                <p class="card-product__price">{{ product.sell_price }}₽ | Скидка: {{ product.discount }} %</p>
+                {% else %}
+                <p class="card-product__price">{{ product.price }}₽</p>
+                {% endif %}
+                <div class="card-product__btns">
+                  <button class="card-product__btn">Корзина</button>
+                  <a href="{{ product.get_absolute_url }}" class="card-product__btn">Описание</a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="pagging">
+          <a
+            href="{% if products.has_previous %}?{% chenge_params page=products.previous_page_number %}{% else %}#{% endif %}"
+            class="pagging__arrow {% if not products.has_previous%}disabled{% endif %}"
+            >«</a
+          >
+          <ul class="pagging__list">
+            {% for page in products.paginator.page_range %} {% if page >= products.number|add:-2 and page <= products.number|add:2 %}
+            <li>
+              <a href="?{% chenge_params page=page %}" class="pagging__item {% if products.number == page %}_active{% endif %}">{{page}}</a>
+            </li>
+            {% endif %} {% endfor %}
+          </ul>
+          <a href="{% if products.has_next %}?{% chenge_params page=products.next_page_number %}{% else %}#{% endif %}" class="pagging__arrow">»</a>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}

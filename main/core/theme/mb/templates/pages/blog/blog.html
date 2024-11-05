@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% load static %} {% load thumbnail %}
+{% block title %}
+{% if setup.meta_title %}
+{{ setup.meta_title }}
+{% else %}
+Статьи и полезная информация| Акрополь
+{% endif %}
+{% endblock %}
+{% block description%}
+{% if setup.meta_description %}
+{{ setup.meta_description }}
+{% else %}
+Раздел с информацией о памятниках, мемориальных услугах полезные советы от компании Акрополь в Томске
+{% endif %}
+{% endblock %}
+{% block keywords %}
+{% if setup.meta_keywords %}
+{{ setup.meta_keywords }}
+{% endif %}
+{% endblock %}
+{% block content %}
+
+<main>
+  <div class="blog">
+    <div class="blog__container">
+      <div class="blog__inner">
+        <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <a href="/" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+            class="breadcrumbs__item">
+            Главная
+            <meta itemprop="position" content="1" />
+          </a>
+          <span itemprop="name" class="breadcrumbs__item">
+            Статьи
+            <meta itemprop="position" content="2" />
+          </span>
+        </div>
+        {% if setup.meta_h1 %}
+        <h1 class="blog__title _title">{{ setup.meta_h1 }}</h1>
+        {% endif %}
+        {% if articles %}
+        <div class="blog__grid">
+          {% for article in articles %}
+          <article class="blog__article article">
+            <a href="{{ article.get_absolute_url }}" class="article__image">
+              {% if article.image %}
+              {% thumbnail article.image "368x350" format="WEBP" crop="center" as im %}
+              <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ image.name }}"
+                title="{{ image.name }}" />
+              {% endthumbnail %}
+              {% else %}
+              <img src="{% static 'theme/mb/images/no-image.png' %}" alt="Нет картинки" title="Нет картинки" />
+              {% endif %}
+            </a>
+            <div class="article__content">
+              <img src="{% static 'theme/mb/images/plamya.png' %}" class="article__icon" alt="Паттерн"
+                title="Паттерн" />
+              <a href="{{ article.get_absolute_url }}" class="article__content-title">{{ article.name }}</a>
+              <a href="{{ article.get_absolute_url }}" class="article__content-btn">Прочитать</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-info">
+          <p>Пусто</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% include "../../includes/contact-block.html" %} {% include "../../components/map.html" %}
+</main>
+
+{% endblock %}

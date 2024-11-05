@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% load static %} {% load thumbnail %}{% load carts_tag %} {% block content %}
+<main>
+  <section class="order-create">
+    <div class="order-create__container">
+      <form action="{% url 'order_create' %}" method="POST" class="form">
+        <h2 class="order-create__title _title">Оформление заказа</h2>
+        <div class="order-create__row">
+          <div class="order-create__col">
+            {% csrf_token %}
+            <div class="form__item">
+              <p class="form__item-title">Ваши контакты</p>
+              <div class="form__group-grid">
+                <div class="form__group">
+                  <label for="id_first_name" class="form__label">Имя*:</label>
+                  <input
+                    type="text"
+                    class="form__controls"
+                    id="id_first_name"
+                    value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
+                    name="first_name"
+                    required
+                  />
+                </div>
+                <div class="form__group">
+                  <label for="id_email" class="form__label">Email*:</label>
+                  <input type="text" class="form__controls" id="id_email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" required />
+                </div>
+                <div class="form__group">
+                  <label for="id_phone_number" class="form__label">Номер телефона*:</label>
+                  <input type="text" class="form__controls" id="id_phone_number" name="phone" value="" placeholder="В формате: XXX-XXX-XX-XX" required />
+                </div>
+              </div>
+            </div>
+            <div class="form__item">
+              <p class="form__item-title">Адрес доставки</p>
+              <div class="form__group-boolean">
+                <input type="checkbox" name="pickup" id="pickup" class="form__controls-checkbox" checked />
+                <label for="pickup" class="form__boolean-label">Самовывоз</label>
+              </div>
+              <div class="form__group _hidden" id="id_delivery_address">
+                <input type="text" class="form__controls" name="delivery_address" />
+                <span class="form__help-text">Город, улица, дом, подъезд, офис/квартира</span>
+              </div>
+            </div>
+            <button type="submit" class="form__submit _btn">Отправить</button>
+          </div>
+          <div class="order-create__col">
+            {% load carts_tag %}{% user_carts request as carts %}
+            <p class="order-create__info-order form__item-title"><span>Информация о заказе</span><span> {{ carts.quantity }}</span></p>
+            {% for cart in carts %}
+            <div class="order-create__item">
+              <div class="order-create__thumb">
+                {% if cart.product.image %} {% thumbnail cart.product.image "50x50" format="WEBP" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ cart.product.name }}" title="{{ cart.product.name  }}" />
+                {% endthumbnail %} {% else %}
+                <img src="{% static 'theme/mb/images/no-image.png' %}" alt="{{ cart.product.name }}" title="{{ cart.product.name  }}" />
+                {% endif %}
+              </div>
+              <div class="order-create__info">
+                <a href="{{ cart.product.get_absolute_url }}" class="order-create__name">{{ cart.product.name }}</a>
+                <p class="order-create__price">{{ cart.quantity }} <span>x</span> {{ cart.product.sell_price }} руб.</p>
+              </div>
+            </div>
+            {% endfor %}
+            <div class="order-create__total"><span>Итого:</span> {{ cart.total_price }} руб.</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,180 @@
+.order-create {
+  padding: 80px 0px;
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 0px;
+  }
+
+  // .order-create__title
+
+  &__title {
+    color: rgb(65, 162, 208);
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  // .order-create__row
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+
+    @media screen and (max-width: 620px) {
+      flex-direction: column;
+    }
+  }
+
+  // .order-create__col
+
+  &__col {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (min-width: 620px) {
+      flex: 1 1 50%;
+    }
+
+    @media screen and (max-width: 620px) {
+      width: 100%;
+    }
+
+    &:last-child {
+      border: 1px solid rgba($color: $accent, $alpha: 1.0);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 11px 24px 0px rgba(0, 0, 0, 0.05), 0px 43px 43px 0px rgba(0, 0, 0, 0.04), 0px 97px 58px 0px rgba(0, 0, 0, 0.03), 0px 172px 69px 0px rgba(0, 0, 0, 0.01), 0px 269px 75px 0px rgba(0, 0, 0, 0);
+      background: rgb(255, 255, 255);
+
+
+      @media screen and (min-width: 620px) {
+        flex: 1 1 20%;
+        position: sticky;
+        top: 90px;
+      }
+    }
+  }
+
+  // .order-create__info-order
+
+  &__info-order {}
+
+  // .order-create__item
+
+  &__item {
+    display: flex;
+    gap: 20px;
+  }
+
+  // .order-create__thumb
+
+  &__thumb {
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .order-create__info
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+  }
+
+  // .order-create__name
+
+  &__name {
+    flex: 1 1 auto;
+  }
+
+  // .order-create__price
+
+  &__price {}
+
+  // .order-create__total
+
+  &__total {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba($color: $accent, $alpha: 1.0);
+  }
+
+  .form {
+
+    // .form__item
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    // .form__item-title
+
+    &__item-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 140%;
+    }
+
+    // .form__group-grid
+
+    &__group-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    // .form__group
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    // .form__label
+
+    &__label {}
+
+    // .form__controls
+
+    &__controls {
+      height: 40px;
+      width: 100%;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+
+
+    // .form__controls-checkbox
+
+    &__controls-checkbox {}
+
+    // .form__boolean-label
+
+    &__boolean-label {}
+
+    // .form__help-text
+
+    &__help-text {}
+
+    // .form__submit
+
+    &__submit {
+      padding: 30px;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+Гравировка на памятник в Томске | Акрополь
+{% endblock %}
+{% block description %}
+Закажите качественную гравировку на памятник в Томске.
+Мы создаем точные и долговечные надписи, которые сохранят память на долгие годы.
+Индивидуальный подход к каждому заказу, высокий уровень исполнения и внимание к деталям.
+{% endblock %}
+{% block keywords %}
+гравировка, гравировка томск, гравировка на памятник
+{% endblock %}
+{% block content %}
+
+<body>
+  <div class="wrapper">
+    <div class="hero">
+      <div class="hero__container">
+        <img src="{% static 'theme/mb/images/ustanovka.png' %}" alt="Гравировка на памятнике Томск"
+          title="Гравировка на памятнике Томск" class="hero__image" />
+        <div class="hero__inner">
+          <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+              class="breadcrumbs__item">
+              Главная
+              <meta itemprop="position" content="1" />
+            </a>
+            <a href="" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+              class="breadcrumbs__item">
+              Услуги
+              <meta itemprop="position" content="2" />
+            </a>
+            <span itemprop="name" class="breadcrumbs__item">
+              Гравировка
+              <meta itemprop="position" content="3" />
+            </span>
+          </div>
+          <h1 class="hero__title">
+            <span>Художественная гравировка </span><br />
+            надписей на памятнике
+          </h1>
+          <p class="hero__subtitle">
+            это не только передача информации, но и способ выразить характер усопшего. Предлагаем свои услуги по
+            изготовлению надписей и нанесению изображений.
+          </p>
+          <div class="hero__buttons">
+            <button type="button" class="hero__button hero__button--blue" data-popup="order-service"
+              data-order="Гравировка">Заказать услугу</button>
+            <button type="button" class="hero__button hero__button--small" data-popup="consultation-form"
+              data-order="Гравировка">?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="service-content">
+      <div class="service-content__container">
+        <div class="service-content__inner">
+          <h2 class="service-content__title _title-h2">Преимущества гравировки станком</h2>
+          <div class="service-content__row">
+            <div class="service-content__col">
+              <img src="{% static 'theme/mb/images/ustanovka-2.png' %}" alt="Преимущества гравировки станком"
+                title="Преимущества гравировки станком" class="" />
+            </div>
+            <div class="service-content__col">
+              <div class="service-content__text _text">
+                <ul>
+                  <li>Высокая точность передачи изображения, как портретов, так и картинок любой сложности</li>
+                  <li>Доступная цена по сравнению с ручной гравировкой</li>
+                  <li>Высокое качество нанесенного текста, огромный выбор шрифтов и изображений (символы, ордена,
+                    пейзажи и т.п.)</li>
+                  <li>высокая скорость изготовления</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="service-content">
+      <div class="service-content__container">
+        <div class="service-content__inner">
+          <h2 class="service-content__title _title-h2">Преимущества ручной гравировки</h2>
+          <div class="service-content__row">
+            <div class="service-content__col">
+              <img src="{% static 'theme/mb/images/ustanovka-3.png' %}" alt="Преимущества ручной гравировки"
+                title="Преимущества ручной гравировки" />
+            </div>
+            <div class="service-content__col">
+              <div class="service-content__text _text">
+                <ul>
+                  <li>
+                    Главным преимуществом ручной гравировки перед компьютерной считается возможность нанести изображение
+                    достойного качества, несмотря на низкое качество исходного
+                    фото, предоставленного заказчиком
+                  </li>
+                  <li>объемность и глубина нанесенных изображений и текста</li>
+                  <li>дольше держится золочение</li>
+                  <li>возможность работы на кладбище без демонтажа памятника. Отлично подходит для нанесения новый и
+                    корректировки старых надписей</li>
+                </ul>
+              </div>
+              <button type="button" class="service-content__btn _btn" data-popup="consultation-form"
+                data-order="Гравировка">Получить консультацию</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="service-content">
+      <div class="service-content__container">
+        <div class="service-content__inner">
+          <h2 class="service-content__title _title-h2">Преимущества пескоструйной гравировки</h2>
+          <div class="service-content__row">
+            <div class="service-content__col">
+              <img src="{% static 'theme/mb/images/ustanovka.png' %}" alt="Преимущества пескоструйной гравировки"
+                title="Преимущества пескоструйной гравировки" class="" />
+            </div>
+            <div class="service-content__col">
+              <div class="service-content__text _text">
+                <p>
+                  Сделать надпись на памятнике можно и по пескоструйной технологии. Для начала необходимо нанести
+                  изображение текста на специальную пленку. Затем она прикладывается
+                  к памятнику и все это помещается в специальную камеру. Абразивный аппарат (кварцевый песок) при помощи
+                  сжатого воздуха повреждает незащищенную поверхность
+                  памятника абразивом. Таким образом, создаются надписи и иные изображения, такой способ позволяет
+                  делать надписи глубже на светлых памятниках, что позволяет хорошо
+                  прокрасить их в любой цвет.
+                </p>
+              </div>
+              <button type="button" class="service-content__btn _btn" data-popup="order-service"
+                data-order="Гравировка">Заказать гравировку</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include "../../components/map.html" %}
+  </div>
+</body>
+{% endblock %}

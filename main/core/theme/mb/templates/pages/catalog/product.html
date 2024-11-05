@@ -1,0 +1,187 @@
+{% extends "base.html" %} {% load static %} {% load thumbnail %}
+{% block title %}
+Купить памятник {% if product.model %}модель {%filter lower%}{{product.model }}{% endfilter %}
+{% else %}
+{%filter lower%}{{product.name }}{% endfilter %}
+{% endif %}
+
+в Томске | Акрополь
+{% endblock %}
+{% block description %}
+Купить памятник на могилу в Томске от мастерской Акрополь недорого. Фото памятников и цены указаны на сайте мастерской.
+Модель памятника
+{% if product.model %}{%filter lower%}{{product.model }}{% endfilter %}{% else %}
+{%filter lower%}{{product.name }}{% endfilter %}
+{% endif %}
+{% endblock %}
+
+{% block keywords %}
+{%endblock %}
+{% block content %}
+
+<main class="page">
+  <div class="product">
+    <div class="product__container">
+      <div class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+        <a href="{% url 'category' %}" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+          class="breadcrumbs__item">
+          Каталог
+          <meta itemprop="position" content="1" />
+        </a>
+        <a href="{{ product.category.get_absolute_url }}" itemprop="itemListElement" itemscope=""
+          itemtype="http://schema.org/ListItem" class="breadcrumbs__item">
+          {{ product.category }}
+          <meta itemprop="position" content="2" />
+        </a>
+        <span itemprop="name" class="breadcrumbs__item">
+          {{ product.name }}
+          <meta itemprop="position" content="3" />
+        </span>
+      </div>
+      <div class="product__card product-card">
+        <div class="product__image">
+          <div class="product__slider swiper">
+            <div class="product__wrapper swiper-wrapper">
+              <div class="product__slide swiper-slide">
+                {% if product.image %} {% if product.type_image %}
+                <img src="{{ product.image.url }}" style="object-fit: cover; max-width: 100%"
+                  class="index-slider__image" />
+                {% else %} {% thumbnail product.image "409x510" format="WEBP" crop="center" as im %}
+                <a href="{{ im.url }}" data-gall="myGallery" class="product__slide-link">
+                  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="index-slider__image" />
+                </a>
+                {% endthumbnail %} {% endif %} {% else %}
+                <img src="{% static 'theme/mb/images/no-image.png' %}" alt="" class="index-slider__image" />
+                {% endif %}
+              </div>
+              {% if images %} {% for image in images %}
+              <div class="product__slide swiper-slide">
+                {% thumbnail image.src "409x510" format="WEBP" crop="center" as im %}
+                <a href="{{ im.url }}" data-gall="myGallery" class="product__slide-link">
+                  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="index-slider__image" />
+                </a>
+                {% endthumbnail %}
+                <!-- <img src="{{ image.src.url }}" alt="" class="product-card__noimage" /> -->
+              </div>
+              {% endfor %} {% endif %}
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev product__button-prev"></div>
+            <div class="swiper-button-next product__button-next"></div>
+          </div>
+        </div>
+
+        <div class="product-card__inner">
+          <div class="product-card__content">
+            <div class="product-card__head">
+              {% if product.model %}
+              <h1 class="product-card__title">Модель: {{ product.model }}</h1>
+              {% endif %}
+
+              {% if not product.model %}
+              <h1 class="product-card__title">{{ product.name }}</h1>
+              {% else %}
+              <p class="product-card__article">Наименование: {{ product.name }}</p>
+              {% endif %}
+
+              {% if product.article %}
+              <p class="product-card__article">Артикул: {{ product.article }}</p>
+              {% endif %}
+            </div>
+            {% for ch in chars %} {{ ch.c_chars }} {% endfor %}
+            <div class="product-card__info info-card">
+              {% for ch_name in char_name %}
+              <div class="info-card__item">
+                <p class="info-card__label">Выберите {{ ch_name.text_name }}:</p>
+                <select name="{{ ch_name.filter_name }}" id="{{ ch_name.filter_name }}"
+                  data-name="{{ ch_name.text_name }}">
+                  {% for char_value in chars %} {% if char_value.char_name.text_name == ch_name.text_name %}
+                  <option value="{{ char_value.char_value }}">{{ char_value.char_value }}</option>
+                  {% endif %} {% endfor %}
+                </select>
+              </div>
+              {% endfor %}
+              <div class="info-card__item">
+                <p class="info-card__label">Выберите количество:</p>
+                <div class="info-card__item-inner">
+                  <input type="number" class="" placeholder="1" value="1" />
+                  <p>шт.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="product-card__price">
+            От {{ product.price }} ₽
+
+            <span class="product-card__note"> В связи с частыми изменениями цен у поставщиков, указанная информация о
+              ценах на сайте является ориентировочной. Точную информацию о ценах можно получить у менеджеров компании по
+              телефону или оставить заявку с сайта. </span>
+          </p>
+          <div class="product-card__action">
+            {% csrf_token %}
+            <a href="{% url 'cart_add' %}" rel="nofollow, noindex" class="product-card__add add-to-cart"
+              data-product-id="{{ product.id }}">Добавить в корзину</a>
+            <button type="button" class="product-card__btn" data-popup="consultation"
+              data-order="Консультаци по {{ product.model }}">Заказать консультацию</button>
+          </div>
+        </div>
+      </div>
+      {% if product.description or product.delivery %}
+      <div class="product__description">
+        {% if product.description %}
+        <div class="product__description-col">
+          <p class="product__description-title">Описание</p>
+          <p class="product__description-text">{{ product.description|safe }}</p>
+        </div>
+        {% endif %}
+        {% if product.delivery %}
+        <div class="product__description-col">
+          <p class="product__description-title">Доставка</p>
+          <p class="product__description-text">{{ product.delivery|safe }}.</p>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if product_color %}
+      <div class="product__related">
+        <h2 class="product__related-title _title">Возможные цветовые решения</h2>
+        <div class="product__color">
+          {% for color in product_color %}
+          <div class="product__color-item">
+            <p>{{ color.name }}</p>
+            -
+            <p>{{ color.code_color }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if product.related_products.all %}
+      <div class="product__related">
+        <div class="product__related--top">
+          <h2 class="product__related-title _title">Сопутствующие товары</h2>
+        </div>
+        <div class="index-catalog__cards">
+          {% for related_product in product.related_products.all %}
+          {% include "../../includes/card.html" with product=related_product %}
+          {% endfor %}
+        </div>
+      </div>
+      {% else %}
+      <div class="product__related">
+        <h2 class="product__related-title _title">Сопутствующие товары</h2>
+        <div class="index-catalog__cards">
+          {% for product in products %}
+          {% include "../../includes/card.html" with product=product %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% if product.related_products.all or products %}<a href="/category/soputstvuyushchie-tovary/" class="product__related--link">Смотреть все</a>{% endif %}
+    </div>
+  </div>
+</main>
+
+{% endblock content %}
