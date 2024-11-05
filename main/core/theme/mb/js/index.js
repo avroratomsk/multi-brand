@@ -1,13 +1,3 @@
-// import "./import/modules";
-// import "./import/components";
-// import "./import/inputMask";
-// import "./import/script";
-
-// new VenoBox({
-//   selector: ".index-gallery__item"
-// });
-
-
 /**
  * Вспомогательные общие функции
  */
@@ -273,7 +263,23 @@ if (burgerButton) {
 
     if (burgerBtn) {
       let nav = document.querySelector('.nav');
-      nav.classList.toggle('_active');
+      nav.classList.add('_active');
+      if (nav.classList.contains('_active')) {
+        bodyLock();
+      } else {
+        bodyUnLock();
+      }
+    }
+  })
+}
+
+const closeMenu = document.getElementById('menu-close');
+if (closeMenu) {
+  closeMenu.addEventListener('click', (event) => {
+    const closeBtn = event.target.closest('#menu-close');
+    if (closeBtn) {
+      let nav = document.querySelector('.nav');
+      nav.classList.remove('_active');
       if (nav.classList.contains('_active')) {
         bodyLock();
       } else {
@@ -394,3 +400,29 @@ window.addEventListener('scroll', () => {
     header.classList.remove('header--sticky');
   }
 })
+
+// Функция для скролла к элементу
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  const headerHeight = document.querySelector('.header').offsetHeight;
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Обработчик клика на кнопки
+document.querySelectorAll('[data-anchor]').forEach(button => {
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('data-anchor');
+    console.log(targetId);
+
+    scrollToElement(targetId);
+  });
+});
