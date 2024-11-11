@@ -8,6 +8,7 @@
 {% block content %}
 <main class="page">
   <div class="main" style="background-image:url({% static 'theme/mb/images/bg-main.png' %})">
+    <img src="{% static 'theme/mb/images/main-auto.webp' %}" alt="" class="main__bg">
     <div class="main__container">
       <div class="main__row">
         <div class="main__col">
@@ -21,29 +22,35 @@
           </div>
         </div>
         <div class="main__col">
-          <img src="{% static 'theme/mb/images/main-auto.webp' %}" alt="">
+
         </div>
       </div>
       <div class="main__adv adv">
         <div class="adv__card">
           <img src="{% static 'theme/mb/images/icon/adv-1.svg' %}" alt="" class="adv__card-icon">
+          <img src="{% static 'theme/mb/images/icon/adv-1-1.svg' %}" alt="" class="adv__card-icon-two">
           <p class="adv__card-text">Оригинальные и аналоговые запчасти в наличие и под заказ</p>
         </div>
         <div class="adv__card">
-          <img src="{% static 'theme/mb/images/icon/adv-1.svg' %}" alt="" class="adv__card-icon">
+          <img src="{% static 'theme/mb/images/icon/adv-2.svg' %}" alt="" class="adv__card-icon">
+          <img src="{% static 'theme/mb/images/icon/adv-2-2.svg' %}" alt="" class="adv__card-icon-two">
           <p class="adv__card-text">Официальная гарантия от поставщиков</p>
         </div>
         <div class="adv__card">
-          <img src="{% static 'theme/mb/images/icon/adv-1.svg' %}" alt="" class="adv__card-icon">
+          <img src="{% static 'theme/mb/images/icon/adv-3.svg' %}" alt="" class="adv__card-icon">
+          <img src="{% static 'theme/mb/images/icon/adv-3-3.svg' %}" alt="" class="adv__card-icon-two">
           <p class="adv__card-text">Находимся рядом с ТРЦ Красная площадь</p>
         </div>
         <div class="adv__card">
-          <img src="{% static 'theme/mb/images/icon/adv-1.svg' %}" alt="" class="adv__card-icon">
+          <img src="{% static 'theme/mb/images/icon/adv-4.svg' %}" alt="" class="adv__card-icon">
+          <img src="{% static 'theme/mb/images/icon/adv-4-4.svg' %}" alt="" class="adv__card-icon-two">
           <p class="adv__card-text">Доставка по городу и до сервиса, где обслуживается ваш авто</p>
         </div>
       </div>
     </div>
   </div>
+
+
   <section class="why-us" id="why-us">
     <div class="why-us__container">
       <div class="why-us__row">
@@ -95,28 +102,44 @@
             </div>
           </div>
         </div>
-        <div class="why-us__col">
-          <div class="why-us__director">
-            <img src="{% static 'theme/mb/images/director.webp' %}" alt="">
-            <p>“С 2005 года продаем уверенность в автомобилях наших клиентов. <span>А вы уверены в своем авто?”</span>
+        <div class="why-us__director">
+          <div class="why-us__director-text">
+            <p>"С 2005 года продаем уверенность в автомобилях наших клиентов. <br> <span>А вы уверены в своем
+                авто?"</span>
             </p>
             <p class="director">Директор компании Multi Brand Parts</p>
           </div>
+          <img src="{% static 'theme/mb/images/director.webp' %}" alt="">
         </div>
       </div>
 
     </div>
   </section>
+
+
   <section class="reviews" id="reviews">
     <div class="reviews__container">
       <div class="reviews__inner">
-        <iframe id="big_dark_70000001093020905" frameborder="0" width="100%" height="824px"
-          sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-        <script
-          type="text/javascript">((r, p) => { const l = document.getElementById(r); l.contentWindow.document.open(), l.contentWindow.document.write(decodeURIComponent(escape(atob(p)))), l.contentWindow.document.close() })("big_dark_70000001093020905", "PGhlYWQ+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgogICAgd2luZG93Ll9fc2l6ZV9fPSdiaWcnOwogICAgd2luZG93Ll9fdGhlbWVfXz0nZGFyayc7CiAgICB3aW5kb3cuX19icmFuY2hJZF9fPSc3MDAwMDAwMTA5MzAyMDkwNScKICAgIHdpbmRvdy5fX29yZ0lkX189JycKICAgPC9zY3JpcHQ+PHNjcmlwdCBjcm9zc29yaWdpbj0iYW5vbnltb3VzIiB0eXBlPSJtb2R1bGUiIHNyYz0iaHR0cHM6Ly9kaXNrLjJnaXMuY29tL3dpZGdldC1jb25zdHJ1Y3Rvci9hc3NldHMvaWZyYW1lLmpzIj48L3NjcmlwdD48bGluayByZWw9Im1vZHVsZXByZWxvYWQiIGNyb3Nzb3JpZ2luPSJhbm9ueW1vdXMiIGhyZWY9Imh0dHBzOi8vZGlzay4yZ2lzLmNvbS93aWRnZXQtY29uc3RydWN0b3IvYXNzZXRzL2RlZmF1bHRzLmpzIj48bGluayByZWw9InN0eWxlc2hlZXQiIGNyb3Nzb3JpZ2luPSJhbm9ueW1vdXMiIGhyZWY9Imh0dHBzOi8vZGlzay4yZ2lzLmNvbS93aWRnZXQtY29uc3RydWN0b3IvYXNzZXRzL2RlZmF1bHRzLmNzcyI+PC9oZWFkPjxib2R5PjxkaXYgaWQ9ImlmcmFtZSI+PC9kaXY+PC9ib2R5Pg==")</script>
+        <h2 class="reviews__title">Мнение клиентов</h2>
+        <div class="reviews__row">
+          <div class="reviews__col">
+            <iframe id="big_dark_70000001093020905" frameborder="0" width="100%" height="824px"
+              sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation">
+            </iframe>
+
+            <script type="text/javascript">((r, p) => { const l = document.getElementById(r); l.contentWindow.document.open(), l.contentWindow.document.write(decodeURIComponent(escape(atob(p)))), l.contentWindow.document.close() })("big_dark_70000001093020905", "PGhlYWQ+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgogICAgd2luZG93Ll9fc2l6ZV9fPSdiaWcnOwogICAgd2luZG93Ll9fdGhlbWVfXz0nZGFyayc7CiAgICB3aW5kb3cuX19icmFuY2hJZF9fPSc3MDAwMDAwMTA5MzAyMDkwNScKICAgIHdpbmRvdy5fX29yZ0lkX189JycKICAgPC9zY3JpcHQ+PHNjcmlwdCBjcm9zc29yaWdpbj0iYW5vbnltb3VzIiB0eXBlPSJtb2R1bGUiIHNyYz0iaHR0cHM6Ly9kaXNrLjJnaXMuY29tL3dpZGdldC1jb25zdHJ1Y3Rvci9hc3NldHMvaWZyYW1lLmpzIj48L3NjcmlwdD48bGluayByZWw9Im1vZHVsZXByZWxvYWQiIGNyb3Nzb3JpZ2luPSJhbm9ueW1vdXMiIGhyZWY9Imh0dHBzOi8vZGlzay4yZ2lzLmNvbS93aWRnZXQtY29uc3RydWN0b3IvYXNzZXRzL2RlZmF1bHRzLmpzIj48bGluayByZWw9InN0eWxlc2hlZXQiIGNyb3Nzb3JpZ2luPSJhbm9ueW1vdXMiIGhyZWY9Imh0dHBzOi8vZGlzay4yZ2lzLmNvbS93aWRnZXQtY29uc3RydWN0b3IvYXNzZXRzL2RlZmF1bHRzLmNzcyI+PC9oZWFkPjxib2R5PjxkaXYgaWQ9ImlmcmFtZSI+PC9kaXY+PC9ib2R5Pg==");
+            </script>
+          </div>
+          <div class="reviews__col">
+            <div style="width:100%;height:100%;overflow:hidden;position:relative;"><iframe
+                style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box"
+                src="https://yandex.ru/maps-reviews-widget/12481885073?comments"></iframe></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
   {% include "../includes/contact-block.html" %}
 </main>
 {% endblock %}

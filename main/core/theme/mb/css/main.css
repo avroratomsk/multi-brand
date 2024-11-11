@@ -272,6 +272,15 @@ html.lock body::before {
   background-position: center center;
   padding: 250px 0px 75px;
   overflow: hidden;
+  position: relative;
+}
+
+.main__bg {
+  position: absolute;
+  top: 50%;
+  right: -12%;
+  transform: translateY(-50%);
+  width: 1120px;
 }
 
 .main__row {
@@ -287,13 +296,6 @@ html.lock body::before {
 .main__col:first-child {
   max-width: 798px;
   width: 100%;
-}
-
-.main__col:nth-child(2) img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(40%, -50%);
 }
 
 .main__title {
@@ -316,20 +318,23 @@ html.lock body::before {
 
 .main__action {
   margin-top: 57px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .main__btn {
-  padding: 15px 30px;
-  border-radius: 13.14px;
-  background: rgb(108, 50, 254);
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
+  line-height: 150%;
+  padding: 10px;
+  border-radius: 13px;
+  background: rgb(108, 50, 254);
 }
 
 .main__text {
   font-size: 14px;
   line-height: 140%;
-  margin-top: 30px;
 }
 
 .main__adv {
@@ -338,20 +343,30 @@ html.lock body::before {
 
 .adv {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 70px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 90px;
+  max-width: 1274px;
+  width: 100%;
+  margin: 115px auto 0px;
 }
 
 .adv__card {
-  height: 160px;
   border: 2px solid rgba(109, 109, 109, 0);
   border-radius: 12.25px;
-  padding: 16px;
+  padding: 10px;
   transition: 0.3s;
 }
 
 .adv__card:hover {
   border: 2px solid rgb(108, 50, 254);
+}
+
+.adv__card:hover .adv__card-icon {
+  display: none;
+}
+
+.adv__card:hover .adv__card-icon-two {
+  display: block;
 }
 
 .adv__card:hover .adv__card-text {
@@ -364,11 +379,22 @@ html.lock body::before {
   margin-bottom: 20px;
 }
 
+.adv__card-icon-two {
+  display: none;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
 .adv__card-text {
   color: rgb(109, 109, 109);
   font-size: 18px;
   line-height: 140%;
   transition: 0.3s;
+}
+
+.why-us {
+  position: relative;
 }
 
 .why-us__title {
@@ -382,16 +408,11 @@ html.lock body::before {
   margin-bottom: 50px;
 }
 
-.why-us__row {
-  display: flex;
-  justify-content: space-between;
-  gap: 80px;
-}
-
 .why-us__list {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  max-width: 970px;
 }
 
 .why-us__list li {
@@ -421,6 +442,21 @@ html.lock body::before {
   font-size: 16px;
   font-weight: 500;
   line-height: 150%;
+  display: flex;
+  position: absolute;
+  top: 70px;
+  right: 18px;
+}
+
+.why-us__director-text {
+  max-width: 359px;
+  margin-right: -120px;
+}
+
+.why-us__director-text p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
 }
 
 .why-us__director span {
@@ -430,15 +466,23 @@ html.lock body::before {
 
 .why-us__director .director {
   margin-top: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 .why-us__director img {
   margin-bottom: 30px;
+  max-width: 372px;
+}
+
+.how-work {
+  max-width: 1199px;
 }
 
 .how-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(234px, 1fr));
   gap: 60px;
   margin-top: 80px;
   padding: 40px;
@@ -502,10 +546,22 @@ html.lock body::before {
   line-height: 150%;
 }
 
+.contact {
+  background: linear-gradient(-525408200%, rgba(11, 10, 17, 0.07) -586683400%, rgba(11, 10, 17, 0.07) 586523550%, 529480250%);
+  background: linear-gradient(#0B0A11, rgba(105, 52, 255, 0.1));
+}
+
 .contact__row {
   display: flex;
   justify-content: space-between;
   gap: 124px;
+}
+
+.contact__col:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 70px;
 }
 
 .contact__col:nth-child(2) {
@@ -519,7 +575,7 @@ html.lock body::before {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 124px;
+  margin-bottom: clamp(30px, 5vw, 124px);
 }
 
 .contact__title {
@@ -541,21 +597,34 @@ html.lock body::before {
 }
 
 .contact__btn {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 500;
-  line-height: 140%;
-  border-radius: 18px;
+  line-height: 150%;
+  padding: 10px;
+  border-radius: 13px;
   background: rgb(108, 50, 254);
-  padding: 20px 40px;
 }
 
 .contact__map {
   overflow: hidden;
 }
 
-.reviews__inner {
-  max-width: 528px;
-  margin: 0 auto;
+.reviews__title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 150%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.reviews__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.reviews__col {
+  flex: 1 1 50%;
 }
 
 .about__grid {
@@ -672,7 +741,7 @@ html.lock body::before {
 
 .header--sticky .header__logo {
   width: 117px;
-  height: 54px;
+  height: 60px;
 }
 
 .header__inner {
@@ -684,8 +753,8 @@ html.lock body::before {
 }
 
 .header__logo {
-  width: 137px;
-  height: 64px;
+  width: 127px;
+  height: 65px;
   transition: 0.5s;
 }
 
@@ -3469,6 +3538,36 @@ body::after {
   }
 }
 
+@media screen and (max-width: 1790px) {
+  .main__bg {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .main__bg {
+    width: 900px;
+    right: -18%;
+  }
+}
+
+@media screen and (max-width: 1390px) {
+  .main__bg {
+    top: 43%;
+  }
+
+  .main__bg {
+    right: -25%;
+    width: 850px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .main__bg {
+    top: 38%;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .category-details__row {
     flex-direction: column;
@@ -3505,16 +3604,14 @@ body::after {
   }
 }
 
+@media screen and (max-width: 1187px) {
+  .main__bg {
+    right: -35%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
-  .main__col:nth-child(2) img {
-    display: none;
-  }
-
-  .why-us__row {
-    gap: 0;
-  }
-
-  .why-us__director {
+  .main__bg {
     display: none;
   }
 
@@ -3791,10 +3888,6 @@ body::after {
     font-size: 16px;
   }
 
-  .contact__info {
-    margin-bottom: 30px;
-  }
-
   .contact__title {
     font-size: 25px;
   }
@@ -3835,6 +3928,7 @@ body::after {
 
   .popup__form-submit {
     margin-top: 10px;
+    padding: 15px 65px;
   }
 
   .item-contact:last-child {
