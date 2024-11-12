@@ -395,6 +395,7 @@ html.lock body::before {
 
 .why-us {
   position: relative;
+  overflow: hidden;
 }
 
 .why-us__title {
@@ -561,7 +562,6 @@ html.lock body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 70px;
 }
 
 .contact__col:nth-child(2) {
@@ -3410,6 +3410,10 @@ body::after {
 }
 
 @media screen and (min-width: 768px) {
+  .contact__col:nth-child(1) {
+    margin-left: 70px;
+  }
+
   .header__burger {
     display: none;
   }
@@ -3557,12 +3561,6 @@ body::after {
   }
 }
 
-@media screen and (max-width: 1460px) {
-  .why-us__director {
-    right: -5%;
-  }
-}
-
 @media screen and (max-width: 1400px) {
   .why-us__director {
     top: 0;
@@ -3589,6 +3587,12 @@ body::after {
 @media screen and (max-width: 1280px) {
   .why-us__director-text p {
     font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .why-us__director {
+    display: none;
   }
 }
 
@@ -3692,6 +3696,11 @@ body::after {
 }
 
 @media screen and (max-width: 768px) {
+  .main__action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .main__adv {
     margin-top: 80px;
   }
@@ -3704,6 +3713,10 @@ body::after {
 
   .contact__row {
     gap: 30px;
+    flex-direction: column;
+  }
+
+  .reviews__row {
     flex-direction: column;
   }
 
