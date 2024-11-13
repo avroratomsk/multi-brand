@@ -172,7 +172,7 @@ ol {
   border: 1px solid rgba(38, 53, 61, 0.1);
   background-color: white;
   height: 80px;
-  display: flex;
+  display: none;
   align-items: center;
 }
 
@@ -329,7 +329,7 @@ ol {
 }
 
 .page {
-  padding: 80px 0px 0px 280px;
+  padding: 0px 0px 0px 280px;
 }
 
 .page__inner {
