@@ -14,6 +14,18 @@
     margin-top: 20px;
   }
 
+  // .page-content__block
+  &__block {
+    border-bottom: 2px solid rgba($color: $mainColor, $alpha: .1);
+    padding-bottom: 30px;
+
+    .title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+  }
+
   // .page-content__col
 
   &__col {

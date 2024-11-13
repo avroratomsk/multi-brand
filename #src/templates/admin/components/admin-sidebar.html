@@ -2,416 +2,12 @@
 
 <div class="sidebar">
   <div class="sidebar__top top-sidebar">
-    <a href="/" class="top-sidebar__logo">
+    <a class="top-sidebar__logo">
       <img src="{% static 'theme/mb/images/admin/admin-logo.svg' %}" alt="svg logo" title="svg logo" />
       Панель управления
     </a>
   </div>
   <div class="sidebar__menu menu-sidebar">
-    <div class="menu-sidebar__item">
-      <p class="menu-sidebar__item-title">Основные страницы</p>
-      <a href="{% url 'admin' %}" class="menu-sidebar__link-general">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-              <g id="Group_2336" data-name="Group 2336">
-                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-              <g id="Group_2338" data-name="Group 2338">
-                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-              <g id="Group_2340" data-name="Group 2340">
-                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-              </g>
-            </g>
-          </g>
-        </svg>
-        <span>Статистика</span>
-      </a>
-      <a href="" class="menu-sidebar__link-general">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-              <g id="Group_2336" data-name="Group 2336">
-                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-              <g id="Group_2338" data-name="Group 2338">
-                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-              <g id="Group_2340" data-name="Group 2340">
-                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-              </g>
-            </g>
-          </g>
-        </svg>
-        <span>Пользователи</span>
-      </a>
-    </div>
-    <div class="menu-sidebar__item">
-      <p class="menu-sidebar__item-title">Магазин</p>
-      <a href="{% url 'admin_shop' %}" class="menu-sidebar__link-general">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-              <g id="Group_2336" data-name="Group 2336">
-                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-              <g id="Group_2338" data-name="Group 2338">
-                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-              <g id="Group_2340" data-name="Group 2340">
-                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-              </g>
-            </g>
-          </g>
-        </svg>
-        <span>Настройки магазина</span>
-      </a>
-      <div class="menu-sidebar__dropdown" id="products">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Товары</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'admin_product' %}">Список товаров</a></li>
-            <li><a href="{% url 'product_add' %}">Добавить товар</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu-sidebar__dropdown" id="category">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Категории</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'admin_category' %}">Список категорий</a></li>
-            <li><a href="{% url 'category_add' %}">Добавить категорию</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu-sidebar__dropdown" id="attr">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Атрибуты товаров</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'admin_char' %}">Список атрибутов</a></li>
-            <li><a href="{% url 'char_group_add' %}">Добавить группу атрибутов</a></li>
-            <li><a href="{% url 'char_add' %}">Добавить атрибут</a></li>
-          </ul>
-        </div>
-      </div>
-      <a href="{% url 'upload_goods' %}" class="menu-sidebar__link-general">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-              <g id="Group_2336" data-name="Group 2336">
-                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-              <g id="Group_2338" data-name="Group 2338">
-                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-              </g>
-            </g>
-            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-              <g id="Group_2340" data-name="Group 2340">
-                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-              </g>
-            </g>
-          </g>
-        </svg>
-        <span>Загрузка csv/Excel</span>
-      </a>
-    </div>
-
-    <div class="menu-sidebar__item">
-      <p class="menu-sidebar__item-title">Остальные страницы</p>
-      <div class="menu-sidebar__dropdown" id="attr">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Контакты</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            {% comment %}
-            <li><a href="{% url 'admin_contact' %}">Страница контактов</a></li>
-            {% endcomment %}
-            <li><a href="">Соц. сети</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu-sidebar__dropdown" id="attr">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Отзывы</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'admin_reviews' %}">Список отзывов</a></li>
-            <li><a href="{% url 'admin_reviews_add' %}">Добавить отзыв</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu-sidebar__dropdown" id="attr">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Галлерея</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'gallery_settings' %}">Настройки галереи</a></li>
-            <li><a href="{% url 'admin_gallery_category' %}">Список категорий</a></li>
-            <li><a href="{% url 'admin_reviews_add' %}">Добавить категорию</a></li>
-            <li><a href="{% url 'admin_gallery' %}">Список фотографий</a></li>
-            <li><a href="{% url 'admin_gallery_add' %}">Добавить фотографию</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu-sidebar__dropdown" id="attr">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Отзывы</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'admin_reviews' %}">Список отзывов</a></li>
-            <li><a href="{% url 'admin_reviews_add' %}">Добавить отзыв</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu-sidebar__dropdown" id="attr">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Акции</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'admin_stock' %}">Список акций</a></li>
-            <li><a href="{% url 'stock_add' %}">Добавить акцию</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu-sidebar__dropdown" id="attr">
-        <div class="menu-sidebar__dropdown-title">
-          <div class="menu-sidebar__dropdow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
-              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
-                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
-                  <g id="Group_2336" data-name="Group 2336">
-                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
-                  <g id="Group_2338" data-name="Group 2338">
-                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
-                  </g>
-                </g>
-                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
-                  <g id="Group_2340" data-name="Group 2340">
-                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <span>Настрйоки блога</span>
-          </div>
-          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
-        </div>
-        <div class="menu-sidebar__dropdown-content">
-          <ul>
-            <li><a href="{% url 'blog_settings' %}">Настройки блога</a></li>
-            <li><a href="{% url 'admin_stock' %}">Категории статей</a></li>
-            <li><a href="{% url 'article' %}">Статьи</a></li>
-            <li><a href="{% url 'stock_add' %}">Теги статей</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <div class="menu-sidebar__item">
       <p class="menu-sidebar__item-title">Страницы с настройками</p>
       <a href="{% url 'admin_settings' %}" class="menu-sidebar__link-general">
@@ -484,9 +80,414 @@
         <span>Главная страница</span>
       </a>
     </div>
-    <div class="menu-sidebar__item">
+
+    <div class="menu-sidebar__item" style="opacity: 0.5; pointer-events: none">
+      <p class="menu-sidebar__item-title">Основные страницы</p>
+      <a class="menu-sidebar__link-general">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+              <g id="Group_2336" data-name="Group 2336">
+                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+              <g id="Group_2338" data-name="Group 2338">
+                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+              <g id="Group_2340" data-name="Group 2340">
+                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>Статистика</span>
+      </a>
+      <a class="menu-sidebar__link-general">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+              <g id="Group_2336" data-name="Group 2336">
+                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+              <g id="Group_2338" data-name="Group 2338">
+                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+              <g id="Group_2340" data-name="Group 2340">
+                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>Пользователи</span>
+      </a>
+    </div>
+    <div class="menu-sidebar__item" style="opacity: 0.5; pointer-events: none">
+      <p class="menu-sidebar__item-title">Магазин</p>
+      <a class="menu-sidebar__link-general">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+              <g id="Group_2336" data-name="Group 2336">
+                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+              <g id="Group_2338" data-name="Group 2338">
+                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+              <g id="Group_2340" data-name="Group 2340">
+                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>Настройки магазина</span>
+      </a>
+      <div class="menu-sidebar__dropdown" id="products">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Товары</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Список товаров</a></li>
+            <li><a>Добавить товар</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-sidebar__dropdown" id="category" style="opacity: 0.5; pointer-events: none">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Категории</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Список категорий</a></li>
+            <li><a>Добавить категорию</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-sidebar__dropdown" id="attr" style="opacity: 0.5; pointer-events: none">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Атрибуты товаров</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Список атрибутов</a></li>
+            <li><a>Добавить группу атрибутов</a></li>
+            <li><a>Добавить атрибут</a></li>
+          </ul>
+        </div>
+      </div>
+      <a class="menu-sidebar__link-general" style="opacity: 0.5; pointer-events: none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+          <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+            <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+              <g id="Group_2336" data-name="Group 2336">
+                <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+              <g id="Group_2338" data-name="Group 2338">
+                <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+              </g>
+            </g>
+            <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+              <g id="Group_2340" data-name="Group 2340">
+                <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>Загрузка csv/Excel</span>
+      </a>
+    </div>
+
+    <div class="menu-sidebar__item" style="opacity: 0.5; pointer-events: none">
+      <p class="menu-sidebar__item-title">Остальные страницы</p>
+      <div class="menu-sidebar__dropdown" id="attr">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Контакты</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            {% comment %}
+            <li><a href="{% url 'admin_contact' %}">Страница контактов</a></li>
+            {% endcomment %}
+            <li><a>Соц. сети</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-sidebar__dropdown" id="attr" style="opacity: 0.5; pointer-events: none">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Отзывы</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Список отзывов</a></li>
+            <li><a>Добавить отзыв</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-sidebar__dropdown" id="attr" style="opacity: 0.5; pointer-events: none">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Галлерея</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Настройки галереи</a></li>
+            <li><a>Список категорий</a></li>
+            <li><a>Добавить категорию</a></li>
+            <li><a>Список фотографий</a></li>
+            <li><a>Добавить фотографию</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-sidebar__dropdown" id="attr" style="opacity: 0.5; pointer-events: none">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Отзывы</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Список отзывов</a></li>
+            <li><a>Добавить отзыв</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-sidebar__dropdown" id="attr" style="opacity: 0.5; pointer-events: none">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Акции</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Список акций</a></li>
+            <li><a>Добавить акцию</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-sidebar__dropdown" id="attr" style="opacity: 0.5; pointer-events: none">
+        <div class="menu-sidebar__dropdown-title">
+          <div class="menu-sidebar__dropdow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
+              <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
+                <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
+                  <g id="Group_2336" data-name="Group 2336">
+                    <path id="Path_936" data-name="Path 936" d="M14.288,353.553H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,355.106Z" transform="translate(0 -352)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2339" data-name="Group 2339" transform="translate(0 10.667)">
+                  <g id="Group_2338" data-name="Group 2338">
+                    <path id="Path_937" data-name="Path 937" d="M14.288,12.22H12.634a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,1,0,0,1.242H8.488a2.16,2.16,0,0,0,4.146,0h1.654a.621.621,0,0,0,0-1.242Zm-3.727,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,10.561,13.773Z" transform="translate(0 -10.667)" fill="#40547b" />
+                  </g>
+                </g>
+                <g id="Group_2341" data-name="Group 2341" transform="translate(0 15.637)">
+                  <g id="Group_2340" data-name="Group 2340">
+                    <path id="Path_938" data-name="Path 938" d="M14.288,182.887H6.422a2.16,2.16,0,0,0-4.146,0H.621a.621.621,0,0,0,0,1.242H2.276a2.16,2.16,0,0,0,4.146,0h7.867a.621.621,0,0,0,0-1.242Zm-9.94,1.553a.932.932,0,1,1,.932-.932A.933.933,0,0,1,4.349,184.44Z" transform="translate(0 -181.334)" fill="#40547b" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span>Настрйоки блога</span>
+          </div>
+          <img src="{% static 'theme/mb/images/admin/chevron.svg' %}" alt="" />
+        </div>
+        <div class="menu-sidebar__dropdown-content">
+          <ul>
+            <li><a>Настройки блога</a></li>
+            <li><a>Категории статей</a></li>
+            <li><a>Статьи</a></li>
+            <li><a>Теги статей</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-sidebar__item" style="opacity: 0.5; pointer-events: none">
       <p class="menu-sidebar__item-title">Редактируемые блоки</p>
-      <a href="" class="menu-sidebar__link-general">
+      <a class="menu-sidebar__link-general">
         <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
           <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
             <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">
@@ -509,9 +510,9 @@
         <span>Слайдеры</span>
       </a>
     </div>
-    <div class="menu-sidebar__item">
+    <div class="menu-sidebar__item" style="opacity: 0.5; pointer-events: none">
       <p class="menu-sidebar__item-title">Маркетинг</p>
-      <a href="" class="menu-sidebar__link-general">
+      <a class="menu-sidebar__link-general">
         <svg xmlns="http://www.w3.org/2000/svg" width="14.91" height="14.288" viewBox="0 0 14.91 14.288">
           <g id="adjust_1_" data-name="adjust (1)" transform="translate(0 -10.667)">
             <g id="Group_2337" data-name="Group 2337" transform="translate(0 20.607)">

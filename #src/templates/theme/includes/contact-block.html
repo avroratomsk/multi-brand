@@ -5,21 +5,30 @@
       <div class="contact__col">
         <div class="contact__info">
           <h2 class="contact__title">Где мы находимся</h2>
-          <p class="contact__address contact__text">Краснодар, ул. Петра Метальникова 38</p>
-          <a href="https://vk.com/mbparts_krasnodar" class="contact__address contact__text">vk.com/mbparts_krasnodar</a>
-          <a href="tel:+79189702244" class="contact__address contact__text">+7 (918) 970-22-44</a>
+          <p class="contact__address contact__text">{{ site_settings.address }}</p>
+          <a href="{{ site_settings.vk }}" class="contact__address contact__text">{{ site_settings.vk }}</a>
+          <a href="tel:{{ site_settings.phone }}" class="contact__address contact__text">{{ site_settings.phone }}</a>
           <div class="contact__socials">
-            <a href=""><img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt=""></a>
-            <a href=""><img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt=""></a>
-            <a href=""><img src="{% static 'theme/mb/images/icon/vk.svg' %}" alt=""></a>
+            {% if site_settings.telegram %}
+            <a href="https://t.me/{{ site_settings.telegram  }}" target="_blank">
+              <img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt="" />
+            </a>
+            {% endif %} {% if site_settings.whatsapp %}
+            <a href="https://wa.me/{{ site_settings.whatsapp }}" target="_blank">
+              <img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt="" />
+            </a>
+            {% endif %} {% if site_settings.vk %}
+            <a href="{{ site_settings.vk }}" target="_blank">
+              <img src="{% static 'theme/mb/images/icon/vk.svg' %}" alt="" />
+            </a>
+            {% endif %}
           </div>
         </div>
-        <button class="_btn contact__btn">Заказать обратный звонок</button>
+        <button class="_btn contact__btn" data-popup="callback">Заказать обратный звонок</button>
       </div>
       <div class="contact__col">
         <div class="contact__map">
-          <script type="text/javascript" charset="utf-8" async
-            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A88da36ea34d8c6b6944f710be7f0cfbb6507955801f21341881a4e75a67d94bb&amp;width=100%&amp;height=644&amp;lang=ru_RU&amp;scroll=true"></script>
+          {{ site_settings.map|safe }}
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
 
     .header__logo {
       width: 117px;
-      height: 54px;
+      height: 60px;
     }
 
     @media screen and (max-width: 425px) {
@@ -45,8 +45,8 @@
   // .header__logo
 
   &__logo {
-    width: 137px;
-    height: 64px;
+    width: 127px;
+    height: 65px;
     transition: .5s;
 
     img {

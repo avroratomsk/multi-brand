@@ -24,6 +24,18 @@
     }
   }
 
+  // .page-edit__first
+  &__first {
+    border: 1px solid rgba($color: $mainColor, $alpha: .1);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
   // .page-edit__body
   &__body {}
 

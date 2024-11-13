@@ -3,7 +3,7 @@
   <div class="header__container">
     <div class="header__inner">
       <a href="" class="header__logo">
-        <img src="{% static 'theme/mb/images/logo.png' %}" alt="">
+        <img src="{{ site_settings.logo.url }}" alt="">
       </a>
       <nav class="header__nav nav">
         <button class="nav__close" id="menu-close">
@@ -21,9 +21,18 @@
           </li>
         </ul>
         <div class="header__socials action-mb">
-          <a href="tel:+79189702244">+7 (918) 970-22-44</a>
-          <a href=""><img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt=""></a>
-          <a href=""><img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt=""></a>
+          <a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a>
+          {% if site_settings.telegram %}
+          <a href="https://t.me/{{ site_settings.telegram }}">
+            <img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt="Иконка Telegram" title="Иконка Telegram">
+          </a>
+          {% endif %}
+          {% if site_settings.whatsapp %}
+          <a href="https://wa.me/{{ site_settings.whatsapp }}">
+            <img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt="Иконка WhatsApp" title="Иконка WhatsApp">
+          </a>
+          {% endif %}
+
         </div>
       </nav>
       <button class="header__burger" id="burger-btn">
@@ -33,8 +42,10 @@
         <p class="header__text">Позвоните нам прямо сейчас!</p>
         <div class="header__socials">
           <a href="tel:+79189702244">+7 (918) 970-22-44</a>
-          <a href=""><img src="{% static 'theme/mb/images/icon/tg.svg' %}" alt=""></a>
-          <a href=""><img src="{% static 'theme/mb/images/icon/wh.svg' %}" alt=""></a>
+          <a href="https://t.me/+79189702244" target="_blank"><img src="{% static 'theme/mb/images/icon/tg.svg' %}"
+              alt=""></a>
+          <a href="https://wa.me/+79189702244" target="_blank"><img src="{% static 'theme/mb/images/icon/wh.svg' %}"
+              alt=""></a>
         </div>
       </div>
     </div>
