@@ -298,14 +298,14 @@ html.lock body::before {
   width: 100%;
 }
 
-.main__title {
+.main__col h1 {
   font-size: 40px;
   font-weight: 700;
   line-height: 120%;
   margin-bottom: 20px;
 }
 
-.main__title span {
+.main__col h1 span {
   color: #6C32FE;
   font-size: inherit;
 }
@@ -3898,7 +3898,7 @@ body::after {
     padding: 200px 0px 30px;
   }
 
-  .main__title {
+  .main__col h1 {
     font-size: 30px;
     line-height: 150%;
   }

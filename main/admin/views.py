@@ -102,7 +102,7 @@ def admin_home_page(request):
       # subprocess.call(["touch", RESET_FILE])
       return redirect(request.META.get('HTTP_REFERER'))
     else:
-      return render(request, "home-page/home-page.html", {"form": form_new})
+      return render(request, "static/home_page.html", {"form": form_new})
 
   settings = HomeTemplate.objects.get()
 
@@ -112,7 +112,7 @@ def admin_home_page(request):
     "settings":settings
   }  
 
-  return render(request, "home-page/home-page.html", context)
+  return render(request, "static/home_page.html", context)
 
 @user_passes_test(lambda u: u.is_superuser)
 def admin_shop(request):

@@ -13,9 +13,10 @@
       <div class="main__row">
         <div class="main__col">
           <h1 class="main__title">
-            <span>Удобный поиск и получение</span> нужных запчастей на ваш автомобиль <span>в 2 клика</span>
+            {{ home_page.title_one|safe }}
+            <!-- <span>Удобный поиск и получение</span> нужных запчастей на ваш автомобиль <span>в 2 клика</span> -->
           </h1>
-          <p class="main__subtitle">Более 100.000 позиций доступно для заказа прямо сейчас!</p>
+          <p class="main__subtitle">{{ home_page.subtitle }}</p>
           <div class="main__action">
             <button class="main__btn _btn" data-popup="callback">Заказать обратный звонок</button>
             <p class="main__text">*Мы продаём запчасти, которые сами испытываем на своих автомобилях</p>
@@ -29,22 +30,22 @@
         <div class="adv__card">
           <img src="{% static 'theme/mb/images/icon/adv-1.svg' %}" alt="" class="adv__card-icon">
           <img src="{% static 'theme/mb/images/icon/adv-1-1.svg' %}" alt="" class="adv__card-icon-two">
-          <p class="adv__card-text">Оригинальные и аналоговые запчасти в наличие и под заказ</p>
+          <p class="adv__card-text">{{ home_page.text_one_one }}</p>
         </div>
         <div class="adv__card">
           <img src="{% static 'theme/mb/images/icon/adv-2.svg' %}" alt="" class="adv__card-icon">
           <img src="{% static 'theme/mb/images/icon/adv-2-2.svg' %}" alt="" class="adv__card-icon-two">
-          <p class="adv__card-text">Официальная гарантия от поставщиков</p>
+          <p class="adv__card-text">{{ home_page.text_one_two }}</p>
         </div>
         <div class="adv__card">
           <img src="{% static 'theme/mb/images/icon/adv-3.svg' %}" alt="" class="adv__card-icon">
           <img src="{% static 'theme/mb/images/icon/adv-3-3.svg' %}" alt="" class="adv__card-icon-two">
-          <p class="adv__card-text">Находимся рядом с ТРЦ Красная площадь</p>
+          <p class="adv__card-text">{{ home_page.text_one_three }}</p>
         </div>
         <div class="adv__card">
           <img src="{% static 'theme/mb/images/icon/adv-4.svg' %}" alt="" class="adv__card-icon">
           <img src="{% static 'theme/mb/images/icon/adv-4-4.svg' %}" alt="" class="adv__card-icon-two">
-          <p class="adv__card-text">Доставка по городу и до сервиса, где обслуживается ваш авто</p>
+          <p class="adv__card-text">{{ home_page.text_one_four }}</p>
         </div>
       </div>
     </div>
@@ -59,54 +60,51 @@
           <ul class="why-us__list">
             <li>
               <span>1</span>
-              Доставка запчастей в пункт выдачи от 15 минут в день заказа
+              {{ home_page.item_one}}
             </li>
             <li>
               <span>2</span>
-              Огромный ассортимент запчастей, комплектующих и аксессуаров в наличие и под заказ - более 100 тысяч
-              позиций
+              {{ home_page.item_two}}
             </li>
             <li>
               <span>3</span>
-              Нам важна безопасность в салоне вашего авто, поэтому мы продаем только оригинальные запчасти и их
-              качественные аналоги - доступные по цене
+              {{ home_page.item_three}}
             </li>
           </ul>
           <div class="how-work">
             <div class="how-work__card how-cards">
               <div class="how-cards__card how-cards__card--first">
                 <p class="how-cards__title">Как мы работаем ?</p>
-                <p class="how-cards__text">От звонка до выдачи “запчастей” от 15 минут</p>
+                <p class="how-cards__text">{{ home_page.why_subtitle }}</p>
               </div>
               <div class="how-cards__card">
                 <div class="how-cards__icon">
                   <img src="{% static 'theme/mb/images/icon/i-1.svg' %}" alt="">
                 </div>
-                <p class="how-cards__title">Отправьте заявку</p>
-                <p class="how-cards__text">Укажите свое имя актуальный номер</p>
+                <p class="how-cards__title">{{ home_page.why_title_card_one }}</p>
+                <p class="how-cards__text">{{ home_page.why_descr_card_one }}</p>
               </div>
               <div class="how-cards__card">
                 <div class="how-cards__icon">
                   <img src="{% static 'theme/mb/images/icon/i-2.svg' %}" alt="">
                 </div>
-                <p class="how-cards__title">Дождитесь звонка</p>
-                <p class="how-cards__text">От звонка до выдачи “запчастей” от 15 минут</p>
+                <p class="how-cards__title">{{ home_page.why_title_card_two }}</p>
+                <p class="how-cards__text">{{ home_page.why_descr_card_two }}</p>
               </div>
               <div class="how-cards__card">
                 <div class="how-cards__icon">
                   <img src="{% static 'theme/mb/images/icon/i-3.svg' %}" alt="">
                 </div>
-                <p class="how-cards__title">Получите свой заказ</p>
-                <p class="how-cards__text">Бесплатная доставка в пределах города</p>
+                <p class="how-cards__title">{{ home_page.why_title_card_three }}</p>
+                <p class="how-cards__text">{{ home_page.why_descr_card_three }}</p>
               </div>
             </div>
           </div>
         </div>
         <div class="why-us__director">
           <div class="why-us__director-text">
-            <p>"С 2005 года продаем уверенность в автомобилях наших клиентов. <br> <span>А вы уверены в своем
-                авто?"</span>
-            </p>
+
+            {{ home_page.director|safe }}
             <p class="director">Директор компании Multi Brand Parts</p>
           </div>
           <img src="{% static 'theme/mb/images/director.webp' %}" alt="">
@@ -116,30 +114,21 @@
     </div>
   </section>
 
-
   <section class="reviews" id="reviews">
     <div class="reviews__container">
       <div class="reviews__inner">
         <h2 class="reviews__title">Мнение клиентов</h2>
         <div class="reviews__row">
           <div class="reviews__col">
-            <iframe id="big_dark_70000001093020905" frameborder="0" width="100%" height="824px"
-              sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation">
-            </iframe>
-
-            <script type="text/javascript">((r, p) => { const l = document.getElementById(r); l.contentWindow.document.open(), l.contentWindow.document.write(decodeURIComponent(escape(atob(p)))), l.contentWindow.document.close() })("big_dark_70000001093020905", "PGhlYWQ+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgogICAgd2luZG93Ll9fc2l6ZV9fPSdiaWcnOwogICAgd2luZG93Ll9fdGhlbWVfXz0nZGFyayc7CiAgICB3aW5kb3cuX19icmFuY2hJZF9fPSc3MDAwMDAwMTA5MzAyMDkwNScKICAgIHdpbmRvdy5fX29yZ0lkX189JycKICAgPC9zY3JpcHQ+PHNjcmlwdCBjcm9zc29yaWdpbj0iYW5vbnltb3VzIiB0eXBlPSJtb2R1bGUiIHNyYz0iaHR0cHM6Ly9kaXNrLjJnaXMuY29tL3dpZGdldC1jb25zdHJ1Y3Rvci9hc3NldHMvaWZyYW1lLmpzIj48L3NjcmlwdD48bGluayByZWw9Im1vZHVsZXByZWxvYWQiIGNyb3Nzb3JpZ2luPSJhbm9ueW1vdXMiIGhyZWY9Imh0dHBzOi8vZGlzay4yZ2lzLmNvbS93aWRnZXQtY29uc3RydWN0b3IvYXNzZXRzL2RlZmF1bHRzLmpzIj48bGluayByZWw9InN0eWxlc2hlZXQiIGNyb3Nzb3JpZ2luPSJhbm9ueW1vdXMiIGhyZWY9Imh0dHBzOi8vZGlzay4yZ2lzLmNvbS93aWRnZXQtY29uc3RydWN0b3IvYXNzZXRzL2RlZmF1bHRzLmNzcyI+PC9oZWFkPjxib2R5PjxkaXYgaWQ9ImlmcmFtZSI+PC9kaXY+PC9ib2R5Pg==");
-            </script>
+            {{ home_page.rev_one|safe }}
           </div>
           <div class="reviews__col">
-            <div style="width:100%;height:824px;overflow:hidden;position:relative;"><iframe
-                style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box"
-                src="https://yandex.ru/maps-reviews-widget/12481885073?comments"></iframe></div>
+            {{ home_page.rev_two|safe }}
           </div>
         </div>
       </div>
     </div>
   </section>
-
   {% include "../includes/contact-block.html" %}
 </main>
 {% endblock %}

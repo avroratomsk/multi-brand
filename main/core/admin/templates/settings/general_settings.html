@@ -26,6 +26,18 @@
               <label for="{{ form.phone.id_for_label }}" class="form__controls-label"> <span>*</span>Номер телефона: </label>
               {{ form.phone }} {{ form.phone.errors }}
             </div>
+            <div class="form__group">
+              <label for="{{ form.whatsapp.id_for_label }}" class="form__controls-label">WhatsApp - (номер телефона +79999999999): </label>
+              {{ form.whatsapp }} {{ form.whatsapp.errors }}
+            </div>
+            <div class="form__group">
+              <label for="{{ form.telegram.id_for_label }}" class="form__controls-label">Telegram - (номер телефона +79999999999 или никнейм): </label>
+              {{ form.telegram }} {{ form.telegram.errors }}
+            </div>
+            <div class="form__group">
+              <label for="{{ form.vk.id_for_label }}" class="form__controls-label">Вконтакте: </label>
+              {{ form.vk }} {{ form.vk.errors }}
+            </div>
 
             <div class="form__group">
               <label for="{{ form.email.id_for_label }}" class="form__controls-label">Email: </label>
@@ -40,6 +52,11 @@
             <div class="form__group">
               <label for="{{ form.address.id_for_label }}" class="form__controls-label">Адрес: </label>
               {{ form.address }} {{ form.address.errors }}
+            </div>
+
+            <div class="form__group">
+              <label for="{{ form.map.id_for_label }}" class="form__controls-label">Код карты: </label>
+              {{ form.map }} {{ form.map.errors }}
             </div>
           </div>
           <div class="page-content__col">

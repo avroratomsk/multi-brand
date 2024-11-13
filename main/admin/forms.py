@@ -25,6 +25,19 @@ class GlobalSettingsForm(forms.ModelForm):
         'phone': forms.TextInput(attrs={
             'class': INPUT_CLASS
         }),
+        'whatsapp': forms.TextInput(attrs={
+            'class': INPUT_CLASS
+        }),
+        'telegram': forms.TextInput(attrs={
+            'class': INPUT_CLASS
+        }),
+        'vk': forms.TextInput(attrs={
+            'class': INPUT_CLASS
+        }),
+        'map': forms.TextInput(attrs={
+            'class': INPUT_CLASS,
+            'row': "5",
+        }),
         'time_work': forms.TextInput(attrs={
             'class': INPUT_CLASS
         }),
@@ -390,26 +403,69 @@ class HomeTemplateForm(forms.ModelForm):
   
   class Meta:
       model = HomeTemplate
-      fields = [
-          'banner',
-          'meta_h1',
-          'meta_title',
-          'meta_description',
-          'meta_keywords',
-      ]
-      labels = {
-          'banner': 'Изображение банера',
-          'meta_h1':'Заголвок первого уровня',
-          'meta_title':'Meta title',
-          'meta_description':'Мета description',
-          'meta_keywords':'Meta keywords',
-      }
+      fields = "__all__"
       widgets = {
           'name': forms.TextInput(attrs={
               'class': INPUT_CLASS
           }),
-          'meta_h1': forms.TextInput(attrs={
+          'title_one': forms.TextInput(attrs={
               'class': INPUT_CLASS,
+          }),
+          'subtitle': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'text_one_one': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'text_one_two': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'text_one_three': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'text_one_four': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'item_one': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'item_two': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'item_threee': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'director': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'why_subtitle': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'why_title_card_one': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'why_descr_card_one': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'why_title_card_two': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'why_descr_card_two': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'why_title_card_three': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'why_descr_card_three': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+          }),
+          'rev_one': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+              'row': 5
+          }),
+          'rev_two': forms.TextInput(attrs={
+              'class': INPUT_CLASS,
+              'row': 5
           }),
           'meta_title': forms.TextInput(attrs={
               'class': f"{INPUT_CLASS} meta_field",
