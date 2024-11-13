@@ -8,7 +8,9 @@
 {% block content %}
 <main class="page">
   <div class="main" style="background-image:url({% static 'theme/mb/images/bg-main.png' %})">
-    <img src="{% static 'theme/mb/images/main-auto.webp' %}" alt="" class="main__bg">
+    {% if home_page.banner %}
+    <img src="{{ home_page.banner.url }}" alt="Автомобили" class="main__bg">
+    {% endif %}
     <div class="main__container">
       <div class="main__row">
         <div class="main__col">
@@ -107,7 +109,10 @@
             {{ home_page.director|safe }}
             <p class="director">Директор компании Multi Brand Parts</p>
           </div>
-          <img src="{% static 'theme/mb/images/director.webp' %}" alt="">
+          {% if home_page.director_image %}
+          <img src="{{ home_page.director_image.url }}" alt="Директор MultiBrandParts" class="main__bg">
+          {% endif %}
+
         </div>
       </div>
 

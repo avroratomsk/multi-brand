@@ -432,7 +432,7 @@ class HomeTemplateForm(forms.ModelForm):
           'item_two': forms.TextInput(attrs={
               'class': INPUT_CLASS,
           }),
-          'item_threee': forms.TextInput(attrs={
+          'item_three': forms.TextInput(attrs={
               'class': INPUT_CLASS,
           }),
           'director': forms.TextInput(attrs={
