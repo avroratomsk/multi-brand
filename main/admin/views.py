@@ -98,13 +98,11 @@ def admin_home_page(request):
     form_new = HomeTemplateForm(request.POST, request.FILES, instance=settings)
     if form_new.is_valid():
       form_new.save()
-      
-      # subprocess.call(["touch", RESET_FILE])
       return redirect(request.META.get('HTTP_REFERER'))
     else:
       return render(request, "static/home_page.html", {"form": form_new})
 
-  settings = HomeTemplate.objects.get()
+  # settings = HomeTemplate.objects.get()
 
   form = HomeTemplateForm(instance=settings)
   context = {

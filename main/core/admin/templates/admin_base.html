@@ -1,34 +1,40 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Панель администратора</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'admin/css/style.css' %}" />
-    <link rel="shortcut icon" href="{% static 'theme/mb/images/favicon.ico' %}" />
-    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
-    {% comment %} <script src="https://cdn.ckeditor.com/4.25.0-lts/standard/ckeditor.js"></script> {% endcomment %}
-    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
-  </head>
-  <body>
-    <div class="content">
-      {% include 'components/admin-sidebar.html' %}
 
-      <div class="content__inner">{% include 'components/admin_header.html' %} {% block body %} {% endblock %}</div>
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var fields = ["id_description", "id_title_one", "id_director"];
-    
-        fields.forEach(function(fieldId) {
-          CKEDITOR.replace(fieldId);
-        });
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Панель администратора</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Oswald:wght@200..700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'admin/css/style.css' %}" />
+  <link rel="shortcut icon" href="{% static 'theme/mb/images/favicon.ico' %}" />
+
+  <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+</head>
+
+<body>
+  <div class="content">
+    {% include 'components/admin-sidebar.html' %}
+
+    <div class="content__inner">{% include 'components/admin_header.html' %} {% block body %} {% endblock %}</div>
+  </div>
+  <script>
+
+    /*document.addEventListener("DOMContentLoaded", function () {
+      var fields = ["id_description", "id_title_one", "id_director"];
+CKEDITOR.replace("id_title_one");
+      fields.forEach(function (fieldId) {
+        CKEDITOR.replace(fieldId);
       });
-    </script>
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> {% endcomment %}
-    <script async src="{% static 'admin/js/app.js' %}?v{% now 'H:i:s' %}"></script>
-  </body>
+    });*/
+  </script>
+  {% comment %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> {% endcomment %}
+  <script async src="{% static 'admin/js/app.js' %}?v{% now 'H:i:s' %}"></script>
+</body>
+
 </html>
