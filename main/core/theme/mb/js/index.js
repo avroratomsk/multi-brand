@@ -2,16 +2,16 @@
  * Вспомогательные общие функции
  */
 
-const bodyLock = (e) => {
-  let widthScrollBar = window.innerWidth - document.documentElement.clientWidth;
-  document.documentElement.style.marginRight = widthScrollBar + 'px';
-  document.documentElement.classList.add('_lock');
-}
+// const bodyLock = (e) => {
+//   let widthScrollBar = window.innerWidth - document.documentElement.clientWidth;
+//   document.documentElement.style.marginRight = widthScrollBar + 'px';
+//   document.documentElement.classList.add('_lock');
+// }
 
-const bodyUnLock = (e) => {
-  document.documentElement.style.marginRight = '0px';
-  document.documentElement.classList.remove('_lock');
-}
+// const bodyUnLock = (e) => {
+//   document.documentElement.style.marginRight = '0px';
+//   document.documentElement.classList.remove('_lock');
+// }
 
 
 // Создание правильной ссылка номера телефона
@@ -163,48 +163,7 @@ function addCartProduct(e) {
 }
 
 
-/**
- * Popup окна
- */
 
-const openPopup = (event) => {
-  let popupBtn = event.target.closest('[data-popup]')
-  if (popupBtn) {
-    popup = document.getElementById(popupBtn.dataset.popup);
-    document.documentElement.classList.add('popup-show');
-    popup.classList.add('popup_show');
-
-    let nameOrder = popupBtn.dataset.order;
-
-    if (nameOrder) {
-      let fieledHidden = popup.querySelector('input[name="service"]');
-      console.log(fieledHidden);
-      fieledHidden.value = nameOrder;
-    }
-
-    bodyLock();
-  }
-}
-
-const closePopup = (event) => {
-  let popupCloseBtn = event.target.closest('.popup__close');
-  if (popupCloseBtn) {
-    popup = popupCloseBtn.closest('.popup');
-    popup.classList.remove('popup_show');
-    document.documentElement.classList.remove('popup-show');
-    bodyUnLock();
-  }
-}
-
-const popupBtn = document.querySelectorAll('[data-popup]');
-if (popupBtn) {
-  popupBtn.forEach(btn => btn.addEventListener('mouseup', openPopup));
-}
-
-const closePopupBtn = document.querySelectorAll('.popup__close');
-if (closePopupBtn) {
-  closePopupBtn.forEach(btn => btn.addEventListener('click', closePopup))
-}
 
 
 /*******************************/
@@ -460,3 +419,79 @@ document.addEventListener("DOMContentLoaded", function () {
     phoneInput.addEventListener('paste', onPhonePaste, false);
   }
 })
+
+
+/**
+ * Popup окна
+ */
+
+const bodyLock = (e) => {
+  let widthScrollBar = window.innerWidth - document.documentElement.clientWidth;
+  document.documentElement.style.marginRight = widthScrollBar + 'px';
+  document.querySelector('.header').style.paddingRight = widthScrollBar + 'px';
+  document.documentElement.classList.add('_lock');
+}
+
+const bodyUnLock = (e) => {
+  document.documentElement.style.marginRight = '0px';
+  document.querySelector('.header').style.paddingRight = '0px';
+  document.documentElement.classList.remove('_lock');
+}
+
+const openPopup = (event) => {
+  let popupBtn = event.target.closest('[data-popup]')
+  if (popupBtn) {
+    const popup = document.getElementById(popupBtn.dataset.popup);
+    document.documentElement.classList.add('popup-show');
+    popup.classList.add('popup_show');
+
+    let nameOrder = popupBtn.dataset.order;
+
+    if (nameOrder) {
+      let fieledHidden = popup.querySelector('input[name="service"]');
+      console.log(fieledHidden);
+      fieledHidden.value = nameOrder;
+    }
+
+    bodyLock();
+  }
+}
+
+const closePopup = (event) => {
+  let popupCloseBtn = event.target.closest('.popup__close');
+  if (popupCloseBtn) {
+    const popup = popupCloseBtn.closest('.popup');
+    popup.classList.remove('popup_show');
+    document.documentElement.classList.remove('popup-show');
+    bodyUnLock();
+  }
+}
+
+const popup = document.querySelectorAll('.popup');
+if (popup) {
+  popup.forEach(popup => popup.addEventListener('click', (e) => {
+    if (!e.target.closest('.popup__content')) {
+      e.currentTarget.classList.remove('popup_show');
+      document.documentElement.classList.remove('popup-show');
+      bodyUnLock();
+    }
+  }))
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.keyCode === 27 && document.querySelector('.popup_show').classList.contains('popup_show')) {
+    document.querySelector('.popup_show').classList.remove('popup_show');
+    document.documentElement.classList.remove('popup-show');
+    bodyUnLock();
+  }
+})
+
+const popupBtn = document.querySelectorAll('[data-popup]');
+if (popupBtn) {
+  popupBtn.forEach(btn => btn.addEventListener('mouseup', openPopup));
+}
+
+const closePopupBtn = document.querySelectorAll('.popup__close');
+if (closePopupBtn) {
+  closePopupBtn.forEach(btn => btn.addEventListener('click', closePopup))
+}
