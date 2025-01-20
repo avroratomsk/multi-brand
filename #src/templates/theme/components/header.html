@@ -2,9 +2,11 @@
 <div class="header">
   <div class="header__container">
     <div class="header__inner">
+      {% if site_settings.logo %}
       <a href="" class="header__logo">
         <img src="{{ site_settings.logo.url }}" alt="">
       </a>
+      {% endif %}
       <nav class="header__nav nav">
         <button class="nav__close" id="menu-close">
           <i class="fa-solid fa-xmark"></i>
