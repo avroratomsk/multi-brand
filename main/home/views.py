@@ -13,13 +13,12 @@ from django.db.models import Q
 
 def callback(request):
   if request.method == "POST":
-    print("Полетели000000000000000000000000000000000000000000000000")
     form = CallbackForm(request.POST)
     if form.is_valid():
       name  = form.cleaned_data['name']
       phone = form.cleaned_data['phone']
       title = 'Заказ обратного звонка'
-      messages = "Заказ обратного звонка:" + "\n" + "Имя: " +str(name) + "\n" + "Номер телефона: " + str(phone) + "\n"
+      messages = "Заказ обратного звонка:" + "\n" + "Имя: " +str(name) + "\n" + "Что ищите? Введите название или артикул: " + str(phone) + "\n"
       
       email_callback(messages, title)
       
