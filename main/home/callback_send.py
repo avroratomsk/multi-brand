@@ -7,7 +7,7 @@ EMAIL_FROM = "info@xn----7sbah6bllcobpj.xn--p1ai"
 try:
   email_clients = BaseSettings.objects.get().email
 except:
-  email_clients = 'akropol70@gmail.com'
+  email_clients = ''
   
 
 def email_callback(messages, title):

@@ -13,6 +13,7 @@ from django.db.models import Q
 
 def callback(request):
   if request.method == "POST":
+    print("Полетели000000000000000000000000000000000000000000000000")
     form = CallbackForm(request.POST)
     if form.is_valid():
       name  = form.cleaned_data['name']

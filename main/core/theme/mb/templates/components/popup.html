@@ -10,10 +10,10 @@
       <form action="{% url 'callback' %}" class="popup__form" method="POST" id="callback-form">
         {% csrf_token %}
         <label for="" class="popup__label">Номер телефона</label>
-        <input type="text" name="name" class="popup__form-controls tel" placeholder="+7 (918) 999 99-99"
+        <input type="text" name="phone" class="popup__form-controls tel" placeholder="+7 (918) 999 99-99"
           required />
         <label for="" class="popup__label">Что ищите? Введите название или артикул</label>
-        <input type="text" name="phone" class="popup__form-controls"
+        <input type="text" name="name" class="popup__form-controls"
           placeholder="Например: запчасти для ТО на kia cerato 2016" required />
         <button type="submit" class="popup__form-submit">Отправить</button>
       </form>
